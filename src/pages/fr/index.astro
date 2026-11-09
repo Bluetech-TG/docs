@@ -1,0 +1,470 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const site = (Astro.site ? Astro.site.toString() : "https://bluetech-tg.github.io").replace(/\/$/, "");
+const canonicalUrl = `${site}${base}/fr/`;
+const ogImage = `${site}${base}/deliv/feature-graphic.png`;
+
+const title = "Bluetech TG — Centre de Documentation & Légal";
+const description =
+  "Documentation officielle, Conditions Générales d'Utilisation et Politiques de Confidentialité des applications et services de Bluetech TG (Deliv, Die verlorenen Wörter, HotelPilot Suite).";
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" href="data:," />
+
+    <!-- OpenGraph / WhatsApp / Telegram / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Bluetech TG" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+  </head>
+  <body>
+    <!-- Intelligent Browser Language Banner -->
+    <aside
+      id="lang-suggest-banner"
+      class="lang-suggest-banner"
+      style="display: none;"
+      data-is-fr="true"
+      data-alt-url={`${base}/`}
+    >
+      <div class="lang-suggest-content">
+        <span class="lang-suggest-text" id="lang-suggest-text"></span>
+        <div class="lang-suggest-actions">
+          <a href={`${base}/`} class="lang-suggest-link" id="lang-suggest-btn"></a>
+          <button type="button" class="lang-suggest-close" id="lang-suggest-close" aria-label="Fermer">✕</button>
+        </div>
+      </div>
+    </aside>
+
+    <div class="page">
+      <header class="header">
+        <div class="header-inner">
+          <div class="brand">
+            <span class="brand-name">Bluetech TG</span>
+            <span class="brand-tag">Documentation & Légal</span>
+          </div>
+          <nav class="lang-switch" aria-label="Changer de langue">
+            <a href={`${base}/`} class="lang-btn">EN</a>
+            <span class="lang-sep">/</span>
+            <span class="lang-btn active" aria-current="page">FR</span>
+          </nav>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="hero">
+          <div class="hero-badge">Portail Officiel</div>
+          <h1 class="hero-title">Applications, Docs & Mentions Légales</h1>
+          <p class="hero-sub">
+            Retrouvez la documentation publique, les fiches de présentation, les Conditions Générales d'Utilisation et les Politiques de Confidentialité éditées par <strong>Bluetech TG</strong>.
+          </p>
+        </section>
+
+        <section class="projects-grid" aria-label="Solutions Bluetech TG">
+          <!-- Deliv Card -->
+          <article class="card">
+            <div class="card-header">
+              <img src={`${base}/deliv/icon.png`} alt="Icône Deliv" class="card-icon" width="60" height="60" />
+              <div class="card-title-group">
+                <span class="card-badge badge-logistics">Logistique & Coursiers</span>
+                <h2 class="card-title">Deliv</h2>
+              </div>
+            </div>
+            <p class="card-desc">
+              Application mobile pensée pour le livreur indépendant. Organisez vos tournées de livraison hors-ligne, gérez vos colis, vos encaissements et vos vraies finances au même endroit.
+            </p>
+            <div class="card-links">
+              <a href={`${base}/deliv/fr/`} class="btn-primary">Présentation</a>
+              <a href={`${base}/deliv/fr/terms/`} class="btn-secondary">Conditions d'utilisation</a>
+              <a href={`${base}/deliv/fr/privacy/`} class="btn-secondary">Confidentialité</a>
+            </div>
+          </article>
+
+          <!-- Die verlorenen Wörter Card -->
+          <article class="card">
+            <div class="card-header">
+              <img src={`${base}/dieverlorenenwoerter/icon.png`} alt="Icône Die verlorenen Wörter" class="card-icon" width="60" height="60" />
+              <div class="card-title-group">
+                <span class="card-badge badge-game">Jeu Ludo-éducatif</span>
+                <h2 class="card-title">Die verlorenen Wörter</h2>
+              </div>
+            </div>
+            <p class="card-desc">
+              Aventure narrative interactive pour apprendre l'allemand en jouant. Rapprochez-vous des habitants de Nebelstein et rendez-leur leurs mots grâce à la répétition espacée.
+            </p>
+            <div class="card-links">
+              <a href={`${base}/dieverlorenenwoerter/fr/`} class="btn-primary">Présentation</a>
+              <a href={`${base}/dieverlorenenwoerter/fr/terms/`} class="btn-secondary">Conditions d'utilisation</a>
+              <a href={`${base}/dieverlorenenwoerter/fr/privacy/`} class="btn-secondary">Confidentialité</a>
+            </div>
+          </article>
+
+          <!-- HotelPilot Suite Card -->
+          <article class="card">
+            <div class="card-header">
+              <img src={`${base}/hotelpilot/icon.png`} alt="Icône HotelPilot Suite" class="card-icon" width="60" height="60" />
+              <div class="card-title-group">
+                <span class="card-badge badge-saas">SaaS Hôtelier PMS</span>
+                <h2 class="card-title">HotelPilot Suite</h2>
+              </div>
+            </div>
+            <p class="card-desc">
+              Plateforme complète de gestion hôtelière (PMS) pour hôtels et résidences. Réservations, facturation, entretien des chambres, gestion de stocks et accompagnement multi-établissements.
+            </p>
+            <div class="card-links">
+              <a href={`${base}/hotelpilot/fr/`} class="btn-primary">Présentation</a>
+              <a href="https://gestionhotelapp.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn-primary btn-demo">Démo en ligne ↗</a>
+              <a href={`${base}/hotelpilot/fr/terms/`} class="btn-secondary">Conditions d'utilisation</a>
+              <a href={`${base}/hotelpilot/fr/privacy/`} class="btn-secondary">Confidentialité</a>
+            </div>
+          </article>
+        </section>
+
+        <!-- Compliance & Transparency Section -->
+        <section class="trust-section">
+          <h3>Transparence & Conformité</h3>
+          <p>
+            Toutes les politiques publiées sur ce portail respectent les exigences de Google Play, de l'App Store et les standards internationaux de protection des données privées.
+          </p>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <p class="footer-copy">© 2026 <strong>Bluetech TG</strong>. Tous droits réservés.</p>
+          <div class="footer-links">
+            <span>Contact : <a href="mailto:bluetechtg@gmail.com">bluetechtg@gmail.com</a></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Script for language suggestion -->
+    <script is:inline>
+      (function() {
+        try {
+          if (sessionStorage.getItem('dismiss_lang_banner') === '1') return;
+          var banner = document.getElementById('lang-suggest-banner');
+          if (!banner) return;
+          var userLangs = navigator.languages || [navigator.language || ''];
+          var prefersEn = false;
+          var prefersFr = false;
+          for (var i = 0; i < userLangs.length; i++) {
+            var l = (userLangs[i] || '').toLowerCase();
+            if (l.indexOf('fr') === 0) { prefersFr = true; break; }
+            if (l.indexOf('en') === 0) { prefersEn = true; break; }
+          }
+          if (prefersEn && !prefersFr) {
+            var textEl = document.getElementById('lang-suggest-text');
+            var btnEl = document.getElementById('lang-suggest-btn');
+            var closeBtn = document.getElementById('lang-suggest-close');
+            if (textEl && btnEl) {
+              textEl.textContent = "🇬🇧 You are viewing the French portal. Would you like to switch to English?";
+              btnEl.textContent = "Switch to English";
+              banner.style.display = "block";
+            }
+            if (closeBtn) {
+              closeBtn.addEventListener('click', function() {
+                banner.style.display = 'none';
+                sessionStorage.setItem('dismiss_lang_banner', '1');
+              });
+            }
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --bg: #ffffff;
+    --fg: #18181b;
+    --fg-muted: #71717a;
+    --border: #e4e4e7;
+    --accent: #2563eb;
+    --card-bg: #fcfcfd;
+    --card-border: #e4e4e7;
+    color-scheme: light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #09090b;
+      --fg: #f4f4f5;
+      --fg-muted: #a1a1aa;
+      --border: #27272a;
+      --accent: #3b82f6;
+      --card-bg: #141417;
+      --card-border: #27272a;
+      color-scheme: dark;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Language Suggestion Banner */
+  .lang-suggest-banner {
+    background: color-mix(in srgb, var(--accent) 10%, var(--bg));
+    border-bottom: 1px solid color-mix(in srgb, var(--accent) 25%, var(--border));
+    padding: 0.65rem 1.25rem;
+    font-size: 0.88rem;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(8px);
+  }
+  .lang-suggest-content {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .lang-suggest-text { color: var(--fg); font-weight: 500; }
+  .lang-suggest-actions { display: inline-flex; align-items: center; gap: 0.65rem; }
+  .lang-suggest-link {
+    background: var(--accent);
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.82rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 6px;
+    white-space: nowrap;
+    transition: opacity 0.15s;
+  }
+  .lang-suggest-link:hover { opacity: 0.9; }
+  .lang-suggest-close {
+    background: transparent;
+    border: none;
+    color: var(--fg-muted);
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+  }
+  .lang-suggest-close:hover { color: var(--fg); background: var(--border); }
+
+  .page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header {
+    padding: 1.5rem 1.5rem 0;
+    max-width: 960px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+  }
+  .brand { display: flex; align-items: baseline; gap: 0.75rem; }
+  .brand-name { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.02em; }
+  .brand-tag { font-size: 0.8rem; color: var(--fg-muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500; }
+
+  .lang-switch { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.82rem; font-weight: 600; }
+  .lang-btn { color: var(--fg-muted); text-decoration: none; padding: 0.15rem 0.4rem; border-radius: 4px; }
+  .lang-btn:hover { color: var(--fg); background: var(--border); }
+  .lang-btn.active { color: var(--accent); font-weight: 700; }
+  .lang-sep { color: var(--border); font-size: 0.75rem; }
+
+  .content {
+    flex: 1;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+    width: 100%;
+  }
+
+  .hero {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 3.5rem;
+  }
+  .hero-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    margin-bottom: 1rem;
+  }
+  .hero-title {
+    font-size: 2.3rem;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin: 0 0 1rem;
+  }
+  .hero-sub {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--fg-muted);
+    margin: 0;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    border-color: color-mix(in srgb, var(--accent) 50%, var(--card-border));
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.1rem;
+  }
+  .card-icon {
+    border-radius: 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    flex-shrink: 0;
+  }
+  .card-title-group { display: flex; flex-direction: column; gap: 0.25rem; }
+  .card-title { font-size: 1.25rem; margin: 0; letter-spacing: -0.01em; }
+  .card-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    width: fit-content;
+  }
+  .badge-logistics { background: #dbeafe; color: #1e40af; }
+  .badge-game { background: #fef3c7; color: #92400e; }
+  .badge-saas { background: #e0e7ff; color: #3730a3; }
+
+  @media (prefers-color-scheme: dark) {
+    .badge-logistics { background: #1e3a8a; color: #bfdbfe; }
+    .badge-game { background: #78350f; color: #fde68a; }
+    .badge-saas { background: #312e81; color: #c7d2fe; }
+  }
+
+  .card-desc {
+    font-size: 0.94rem;
+    line-height: 1.55;
+    color: var(--fg-muted);
+    margin: 0 0 1.5rem;
+    flex: 1;
+  }
+
+  .card-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.45rem 0.85rem;
+    border-radius: 8px;
+    transition: opacity 0.15s;
+  }
+  .btn-primary:hover { opacity: 0.9; }
+  .btn-demo { background: #059669; }
+  .btn-secondary {
+    background: color-mix(in srgb, var(--border) 60%, transparent);
+    color: var(--fg) !important;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 0.45rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .btn-secondary:hover {
+    background: var(--border);
+    border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
+  }
+
+  .trust-section {
+    background: color-mix(in srgb, var(--border) 35%, transparent);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem 1.8rem;
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .trust-section h3 { margin: 0 0 0.5rem; font-size: 1.05rem; }
+  .trust-section p { margin: 0; font-size: 0.88rem; color: var(--fg-muted); line-height: 1.6; }
+
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem 1.5rem 3rem;
+    max-width: 960px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: var(--fg-muted);
+  }
+  .footer-copy { margin: 0; }
+  .footer-links a { color: var(--accent); text-decoration: none; }
+  .footer-links a:hover { text-decoration: underline; }
+</style>

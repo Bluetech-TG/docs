@@ -7,13 +7,23 @@ interface Frontmatter {
   description?: string;
   lang?: "en" | "fr";
   alternateUrl?: string;
+  image?: string;
 }
 
 interface Props {
   frontmatter: Frontmatter;
 }
 
-const { title, project, published, updated, description, lang: explicitLang, alternateUrl: explicitAlt } = Astro.props.frontmatter;
+const {
+  title,
+  project,
+  published,
+  updated,
+  description,
+  lang: explicitLang,
+  alternateUrl: explicitAlt,
+  image: explicitImage,
+} = Astro.props.frontmatter;
 
 // Automatic language detection from path if not explicitly provided
 // Paths containing '/fr/' are French, otherwise English by default!
@@ -38,6 +48,25 @@ if (!alternateUrl) {
 
 const enUrl = isFr ? alternateUrl : pathname;
 const frUrl = isFr ? pathname : alternateUrl;
+
+// OpenGraph & Meta image resolution
+const site = (Astro.site ? Astro.site.toString() : "https://bluetech-tg.github.io").replace(/\/$/, "");
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+let ogImageRelative = explicitImage;
+if (!ogImageRelative) {
+  if (pathname.includes("/deliv")) {
+    ogImageRelative = `${base}/deliv/feature-graphic.png`;
+  } else if (pathname.includes("/dieverlorenenwoerter")) {
+    ogImageRelative = `${base}/dieverlorenenwoerter/feature-graphic.png`;
+  } else if (pathname.includes("/hotelpilot")) {
+    ogImageRelative = `${base}/hotelpilot/icon.png`;
+  } else {
+    ogImageRelative = `${base}/deliv/feature-graphic.png`;
+  }
+}
+const ogImageUrl = ogImageRelative.startsWith("http") ? ogImageRelative : `${site}${ogImageRelative}`;
+const canonicalUrl = `${site}${pathname}`;
 ---
 
 <!doctype html>
@@ -47,14 +76,55 @@ const frUrl = isFr ? pathname : alternateUrl;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
-    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" href="data:," />
+
+    <!-- OpenGraph / WhatsApp / Telegram / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Bluetech TG" />
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:locale" content={isFr ? "fr_FR" : "en_US"} />
+    <meta property="og:locale:alternate" content={isFr ? "en_US" : "fr_FR"} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    {description && <meta name="twitter:description" content={description} />}
+    <meta name="twitter:image" content={ogImageUrl} />
   </head>
   <body>
+    <!-- Intelligent Browser Language Banner -->
+    {alternateUrl && (
+      <aside
+        id="lang-suggest-banner"
+        class="lang-suggest-banner"
+        style="display: none;"
+        data-is-fr={isFr ? "true" : "false"}
+        data-alt-url={alternateUrl}
+      >
+        <div class="lang-suggest-content">
+          <span class="lang-suggest-text" id="lang-suggest-text"></span>
+          <div class="lang-suggest-actions">
+            <a href={alternateUrl} class="lang-suggest-link" id="lang-suggest-btn"></a>
+            <button type="button" class="lang-suggest-close" id="lang-suggest-close" aria-label={isFr ? "Fermer" : "Dismiss"}>✕</button>
+          </div>
+        </div>
+      </aside>
+    )}
+
     <div class="page">
       <header class="header">
         <div class="header-inner">
-          <span class="project-label">{project}</span>
+          <div class="brand-group">
+            <a href={`${base}/`} class="home-crumb" title={isFr ? "Accueil des documentations" : "Documentation Home"}>
+              Bluetech TG
+            </a>
+            <span class="crumb-sep">/</span>
+            <span class="project-label">{project}</span>
+          </div>
           <nav class="lang-switch" aria-label={isFr ? "Changer de langue" : "Change language"}>
             {isFr ? (
               <a href={enUrl} class="lang-btn">EN</a>
@@ -97,13 +167,66 @@ const frUrl = isFr ? pathname : alternateUrl;
       </main>
 
       <footer class="footer">
-        <p>
-          {isFr
-            ? "Cette page ne référence aucun autre projet ni aucune autre page de ce site."
-            : "This page does not reference any other project or page on this site."}
-        </p>
+        <div class="footer-inner">
+          <p class="footer-note">
+            {isFr
+              ? "Bluetech TG · Lomé, Togo · Tous droits réservés."
+              : "Bluetech TG · Lomé, Togo · All rights reserved."}
+          </p>
+          <a href={`${base}/`} class="footer-home-link">
+            {isFr ? "← Centre de documentation" : "← Documentation Home"}
+          </a>
+        </div>
       </footer>
     </div>
+
+    <script is:inline>
+      (function() {
+        try {
+          if (sessionStorage.getItem('dismiss_lang_banner') === '1') return;
+          var banner = document.getElementById('lang-suggest-banner');
+          if (!banner) return;
+          var isCurrentFr = banner.getAttribute('data-is-fr') === 'true';
+          var altUrl = banner.getAttribute('data-alt-url');
+          if (!altUrl) return;
+
+          var userLangs = navigator.languages || [navigator.language || ''];
+          var prefersFr = false;
+          var prefersEn = false;
+          for (var i = 0; i < userLangs.length; i++) {
+            var l = (userLangs[i] || '').toLowerCase();
+            if (l.indexOf('fr') === 0) { prefersFr = true; break; }
+            if (l.indexOf('en') === 0) { prefersEn = true; break; }
+          }
+
+          var textEl = document.getElementById('lang-suggest-text');
+          var btnEl = document.getElementById('lang-suggest-btn');
+          var closeBtn = document.getElementById('lang-suggest-close');
+
+          if (!isCurrentFr && prefersFr) {
+            textEl.textContent = "🇫🇷 Vous naviguez en anglais. Souhaitez-vous afficher cette page en français ?";
+            btnEl.textContent = "Passer en français";
+            banner.style.display = "block";
+          } else if (isCurrentFr && prefersEn && !prefersFr) {
+            textEl.textContent = "🇬🇧 You are viewing this page in French. Would you like to switch to English?";
+            btnEl.textContent = "Switch to English";
+            banner.style.display = "block";
+          }
+
+          if (closeBtn) {
+            closeBtn.addEventListener('click', function() {
+              banner.style.display = 'none';
+              sessionStorage.setItem('dismiss_lang_banner', '1');
+            });
+          }
+          if (btnEl) {
+            btnEl.addEventListener('click', function() {
+              sessionStorage.setItem('dismiss_lang_banner', '1');
+            });
+          }
+        } catch (e) {}
+      })();
+    </script>
   </body>
 </html>
 
@@ -146,6 +269,71 @@ const frUrl = isFr ? pathname : alternateUrl;
     -webkit-font-smoothing: antialiased;
   }
 
+  /* Language Suggestion Banner */
+  .lang-suggest-banner {
+    background: color-mix(in srgb, var(--accent) 10%, var(--bg));
+    border-bottom: 1px solid color-mix(in srgb, var(--accent) 25%, var(--border));
+    padding: 0.65rem 1.25rem;
+    font-size: 0.88rem;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(8px);
+  }
+
+  .lang-suggest-content {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .lang-suggest-text {
+    color: var(--fg);
+    font-weight: 500;
+  }
+
+  .lang-suggest-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+  }
+
+  .lang-suggest-link {
+    background: var(--accent);
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.82rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 6px;
+    white-space: nowrap;
+    transition: opacity 0.15s;
+  }
+
+  .lang-suggest-link:hover {
+    opacity: 0.9;
+  }
+
+  .lang-suggest-close {
+    background: transparent;
+    border: none;
+    color: var(--fg-muted);
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+  }
+
+  .lang-suggest-close:hover {
+    color: var(--fg);
+    background: var(--border);
+  }
+
   .page {
     min-height: 100vh;
     display: flex;
@@ -165,6 +353,31 @@ const frUrl = isFr ? pathname : alternateUrl;
     align-items: center;
     border-bottom: 2px solid var(--border);
     padding-bottom: 0.5rem;
+  }
+
+  .brand-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .home-crumb {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--fg);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .home-crumb:hover {
+    color: var(--accent);
+  }
+
+  .crumb-sep {
+    color: var(--border);
+    font-size: 0.8rem;
   }
 
   .project-label {
@@ -289,9 +502,28 @@ const frUrl = isFr ? pathname : alternateUrl;
     border-top: 1px solid var(--border);
   }
 
-  .footer p {
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-note {
     color: var(--fg-muted);
     font-size: 0.82rem;
     margin: 0;
+  }
+
+  .footer-home-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+  }
+
+  .footer-home-link:hover {
+    text-decoration: underline;
   }
 </style>
