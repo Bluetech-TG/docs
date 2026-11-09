@@ -1,63 +1,63 @@
 ---
 layout: ../../layouts/Legal.astro
-title: Conditions Générales d'Utilisation — HotelPilot Suite
+title: Terms of Service — HotelPilot Suite
 project: HotelPilot Suite
-published: 9 novembre 2026
-updated: 9 novembre 2026
-description: Conditions Générales d'Utilisation et de Service de la plateforme SaaS HotelPilot Suite.
+published: November 9, 2026
+updated: November 9, 2026
+description: Terms of Service and Master Subscription Agreement for HotelPilot Suite SaaS.
 ---
 
-## Objet
+## Purpose
 
-Les présentes Conditions Générales d'Utilisation et de Service (CGU/CGV) régissent l'accès et l'utilisation de la plateforme de gestion hôtelière (PMS) **HotelPilot Suite** ainsi que de son application mobile compagnon, développées et éditées par **Bluetech TG**.
+These Terms of Service govern your access to and use of the **HotelPilot Suite** Property Management System (PMS) platform and its companion mobile applications, developed and published by **Bluetech TG**.
 
-La création d'un compte établissement ou l'utilisation de la solution emporte adhésion pleine et entière aux présentes conditions.
+Creating an establishment account or subscribing to the service entails complete and unreserved acceptance of these Terms.
 
-## Qui sommes-nous
+## About Us
 
-HotelPilot Suite est une solution SaaS professionnelle éditée par **Bluetech TG**, entreprise technologique.  
-Contact : **bluetechtg@gmail.com**.
+HotelPilot Suite is an enterprise SaaS solution developed and operated by **Bluetech TG**, a technology company.  
+Contact: **bluetechtg@gmail.com**.
 
-## Description de la solution
+## Platform Description
 
-HotelPilot Suite est un système de gestion intégrée pour l'hôtellerie (Property Management System) permettant :
-- La gestion des réservations, plannings de chambres et séjours ;
-- La facturation, les encaissements et la gestion des extras ;
-- La gestion des stocks, du ménage (*housekeeping*) et des opérations quotidiennes ;
-- L'administration des accès collaborateurs et des statistiques d'exploitation.
+HotelPilot Suite is a unified property management system for hospitality businesses providing:
+- Room reservation management, occupancy calendars, and guest stays;
+- Guest billing, payment processing, and extra charge tracking;
+- Housekeeping operations, inventory control, and maintenance logging;
+- Multi-user staff permissions, shift handovers, and performance analytics.
 
-## Abonnements, Facturation et Tarifs
+## Subscriptions, Billing & Payment
 
-- HotelPilot Suite est proposé sous forme d'abonnements périodiques (mensuels ou annuels) selon la formule choisie par l'établissement.
-- Les règlements s'effectuent via nos prestataires de paiement sécurisés partenaires : carte bancaire (Stripe) et Mobile Money (FedaPay : T-Money, Flooz, Orange Money).
-- En cas de défaut de paiement non régularisé après relance, Bluetech TG se réserve le droit de suspendre temporairement l'accès au service.
+- HotelPilot Suite is provided via subscription plans (monthly or annual) according to the contracted tier.
+- Payments are processed securely through certified gateway partners: Credit Card (Stripe) and Mobile Money (FedaPay: T-Money, Flooz, Orange Money).
+- Bluetech TG reserves the right to suspend platform access if outstanding invoices remain unpaid following formal reminder notices.
 
-## Comptes, Sécurité et Confidentialité
+## Security, Accounts & Data Segregation
 
-- **Identifiants** : L'administrateur de l'hôtel et les utilisateurs accrédités sont responsables de la sécurité de leurs identifiants de connexion et de l'activation éventuelle de l'authentification à deux facteurs (MFA/TOTP).
-- **Cloisonnement** : Chaque établissement dispose d'un espace logiciel dédié et hermétique garantissant la stricte étanchéité de ses données vis-à-vis des autres clients.
-- **Rôle sur les données clients** : L'hôtel demeure l'unique responsable du traitement des données personnelles de sa propre clientèle (voyageurs). Bluetech TG intervient en qualité de sous-traitant technique hébergeant ces données conformément à sa Politique de confidentialité.
+- **User Accounts**: The subscriber establishment is responsible for safeguarding credentials and managing role-based access for its staff members, including two-factor authentication (MFA/TOTP).
+- **Tenant Isolation**: Each hotel establishment operates in an isolated environment ensuring complete data segregation from other customers.
+- **Data Processor Status**: The subscribing hotel remains the primary Data Controller for its guests' personal data. Bluetech TG acts as a Data Processor, hosting and securing the data according to our Privacy Policy.
 
-## Continuité de service et Sauvegardes
+## Service Availability & Backups
 
-- Bluetech TG s'efforce de garantir une disponibilité de la solution 24h/24 et 7j/7, sous réserve des périodes de maintenance planifiée nécessaires à l'amélioration du service.
-- Des sauvegardes automatisées et régulières de la base de données sont assurées.
-- Bluetech TG ne saurait être tenu responsable d'interruptions résultant d'un dysfonctionnement du réseau Internet public ou d'une défaillance imputable au fournisseur d'infrastructure cloud.
+- Bluetech TG aims for 99.9% uptime, excluding scheduled maintenance windows announced in advance.
+- Automated daily database backups are performed.
+- Bluetech TG is not liable for disruptions caused by public telecommunication networks or third-party cloud infrastructure outages.
 
-## Propriété intellectuelle
+## Intellectual Property
 
-La plateforme HotelPilot Suite, son interface, ses API, son code source, son application mobile et ses marques sont et demeurent la propriété exclusive de Bluetech TG. Aucun droit de propriété n'est cédé à l'établissement client, qui ne dispose que d'un droit d'accès et d'utilisation concédé pour la durée de son abonnement.
+The HotelPilot Suite platform, software, APIs, mobile companion apps, and brand assets remain the exclusive property of Bluetech TG. The subscriber is granted a non-exclusive, non-transferable right of use for the duration of their active subscription.
 
-## Résiliation et Récupération des données
+## Termination & Data Reversibility
 
-- Chaque partie peut résilier l'abonnement selon les modalités prévues au contrat souscrit.
-- En cas de fin de service, l'établissement peut solliciter l'export complet de ses données opérationnelles en adressant une demande à **bluetechtg@gmail.com**.
-- Les pièces comptables et justificatives relatives à l'abonnement sont archivées conformément aux obligations légales et comptables en vigueur (référentiel OHADA).
+- Either party may terminate the agreement pursuant to the agreed notice period.
+- Upon subscription termination, the establishment may request a comprehensive export of operational data by emailing **bluetechtg@gmail.com**.
+- Billing and accounting records are retained in compliance with regional statutory retention laws (OHADA accounting framework).
 
-## Modifications des conditions
+## Modifications
 
-Bluetech TG peut mettre à jour les présentes conditions pour répondre aux impératifs légaux ou techniques. Les abonnés seront informés de toute révision substantielle.
+Bluetech TG reserves the right to revise these Terms to reflect technical or statutory changes. Subscribers will be notified of material updates.
 
 ## Contact
 
-Pour toute assistance technique, commerciale ou contractuelle : **bluetechtg@gmail.com**.
+For sales, support, or contractual inquiries: **bluetechtg@gmail.com**.

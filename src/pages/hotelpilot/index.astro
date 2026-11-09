@@ -10,97 +10,66 @@ const DEMO_URL = "https://gestionhotelapp.onrender.com/";
   frontmatter={{
     title: "HotelPilot Suite",
     project: "HotelPilot Suite",
-    published: "16 septembre 2026",
-    updated: "16 septembre 2026",
-    description:
-      "HotelPilot Suite — la plateforme SaaS multi-établissements pour gérer réservations, planning, encaissements, stock et comptabilité hôtelière.",
+    published: "September 16, 2026",
+    updated: "November 9, 2026",
+    description: "HotelPilot Suite — All-in-one hospitality management platform (PMS) for hotels and residences.",
   }}
 >
   <Fragment slot="hero">
     <div class="hero">
       <img class="icon" src={`${base}hotelpilot/icon.png`} alt="" width="88" height="88" />
-      <p class="tagline">
-        La plateforme SaaS multi-établissements pour piloter réservations, planning,
-        encaissements, stock et comptabilité hôtelière.
-      </p>
-      <div class="badges">
-        <a class="demo-link" href={DEMO_URL}>Voir la démo en ligne</a>
+      <p class="tagline">All-in-one hospitality management for modern hotels and residences.</p>
+      <div class="actions">
+        <a class="btn-demo" href={DEMO_URL} target="_blank" rel="noopener noreferrer">
+          Live Demo
+        </a>
       </div>
     </div>
   </Fragment>
 
   <p>
-    HotelPilot Suite est un Property Management System (PMS) complet, pensé pour les hôtels et
-    groupes hôteliers multi-établissements qui veulent piloter leurs opérations depuis un seul
-    outil, plutôt que de jongler entre tableur, cahier de réservations et logiciel de caisse.
+    HotelPilot Suite is the Property Management System (PMS) built to simplify daily operations for
+    hotels, boutique residences, and hospitality groups.
+  </p>
+  <p>
+    From booking to check-out, room planning to invoicing, and staff handovers to stock control:
+    everything is centralized in a modern web platform and companion mobile app.
   </p>
 
-  <h2>Réservations et planning</h2>
+  <h2>Reservations & Stay Operations</h2>
   <ul>
-    <li>Planning Gantt interactif avec glisser-déposer pour visualiser et réorganiser les séjours.</li>
-    <li>Disponibilité des chambres recalculée en temps réel à chaque réservation.</li>
-    <li>Demandes de réservation en ligne depuis la vitrine web de l'hôtel, à accepter ou refuser en un clic.</li>
-    <li>Réservations de groupe avec répartition de facture entre plusieurs séjours.</li>
+    <li>Interactive visual room calendar with real-time room status (clean, occupied, maintenance).</li>
+    <li>Fast check-in and check-out workflows with identity capture and automated guest folios.</li>
+    <li>Group bookings, corporate accounts, and split billing support.</li>
   </ul>
 
-  <h2>Encaissements et extras</h2>
+  <h2>Billing & Accounting</h2>
   <ul>
-    <li>Point de vente intégré pour les prestations et ventes directes.</li>
-    <li>Ajout d'extras (minibar, room service...) directement sur la note d'un séjour.</li>
-    <li>Paiement par carte (Stripe) ou Mobile Money — T-Money, Flooz, Orange Money (FedaPay).</li>
+    <li>Automated invoice generation, receipts, and extra charge tracking.</li>
+    <li>Multi-currency support and compliant tax reporting (OHADA framework).</li>
+    <li>Mobile Money and card payment processing.</li>
   </ul>
 
-  <h2>Stock, ménage et comptabilité</h2>
+  <h2>Housekeeping & Stock</h2>
   <ul>
-    <li>Suivi des stocks et des mouvements, avec alertes de stock bas.</li>
-    <li>Planning et suivi du ménage par chambre.</li>
-    <li>Comptabilité en partie double conforme au référentiel OHADA : plan comptable, grand livre, clôture de période.</li>
-    <li>Gestion des partenariats B2B : contrats, commissions, ristournes.</li>
+    <li>Room service and minibar restocking tracking.</li>
+    <li>Real-time housekeeping task assignment and maintenance issue reporting.</li>
   </ul>
 
-  <h2>Pensé pour une équipe, pas juste un poste</h2>
+  <h2>Multi-Property Architecture</h2>
   <ul>
-    <li>Rôles et permissions par hôtel pour les équipes multi-établissements, avec authentification à deux facteurs.</li>
-    <li>Messagerie interne pour coordonner l'équipe sans sortir de l'outil.</li>
-    <li>Journal d'activité complet pour tracer qui a fait quoi.</li>
+    <li>Manage multiple hotel properties from a single management console.</li>
+    <li>Role-based access permissions for front desk, accounting, managers, and housekeeping.</li>
   </ul>
-
-  <h2>Application mobile compagnon</h2>
-  <div class="mobile-app-header">
-    <img
-      class="mobile-icon"
-      src={`${base}hotelpilot/mobile-icon.png`}
-      alt=""
-      width="56"
-      height="56"
-    />
-    <p>
-      HotelPilot Suite ne s'arrête pas au bureau de la réception : une application mobile, pour
-      le même personnel et les mêmes données que le PMS web, met les actions les plus utiles sur
-      le terrain à portée de main.
-    </p>
-  </div>
-  <ul>
-    <li>Messagerie d'équipe en temps réel : "chambre 305 prête", "besoin d'aide en 214"...</li>
-    <li>Décisions sur les demandes de réservation en ligne, en un tap.</li>
-    <li>Ajout d'extras (minibar, room service) directement depuis la chambre.</li>
-    <li>Capture de la pièce d'identité du client à l'accueil, avec l'appareil photo du téléphone.</li>
-    <li>Sorties de stock et alertes de stock bas, saisies depuis le terrain.</li>
-    <li>Notifications push pour les nouvelles demandes, messages et alertes.</li>
-  </ul>
-  <p>
-    L'application mobile est en cours de développement et n'est pas encore publiée sur l'App
-    Store ni le Play Store.
-  </p>
 
   <p>
-    HotelPilot Suite est proposé en abonnement SaaS, avec facturation par carte ou Mobile Money.
+    HotelPilot Suite is available as a cloud SaaS subscription, with online demo available.
   </p>
 
   <hr />
   <p>
-    <a href={DEMO_URL}>Démo en ligne</a> ·
-    <a href={`${base}hotelpilot/privacy/`}>Politique de confidentialité</a> · <a href={`${base}hotelpilot/terms/`}>Conditions d'utilisation</a> · Contact&nbsp;:
+    <a href={DEMO_URL}>Live Demo</a> ·
+    <a href={`${base}hotelpilot/privacy/`}>Privacy Policy</a> · <a href={`${base}hotelpilot/terms/`}>Terms of Service</a> · Contact:&nbsp;
     bluetechtg@gmail.com
   </p>
 </Legal>
@@ -123,45 +92,27 @@ const DEMO_URL = "https://gestionhotelapp.onrender.com/";
   .tagline {
     color: var(--fg-muted);
     font-size: 1.05rem;
-    max-width: 42ch;
+    max-width: 40ch;
     line-height: 1.5;
     margin: 0;
   }
 
-  .badges {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    justify-content: center;
+  .actions {
+    margin-top: 0.5rem;
   }
 
-  .mobile-app-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin: 0 0 1.1rem;
-  }
-
-  .mobile-app-header p {
-    margin: 0;
-  }
-
-  .mobile-icon {
-    flex-shrink: 0;
-    border-radius: 22%;
-    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.15);
-  }
-
-  .demo-link {
-    display: inline-flex;
-    align-items: center;
-    height: 44px;
-    padding: 0 1.1rem;
-    border-radius: 8px;
+  .btn-demo {
+    display: inline-block;
     background: var(--accent);
-    color: #fff;
+    color: white;
+    text-decoration: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: 8px;
     font-weight: 600;
     font-size: 0.95rem;
-    text-decoration: none;
+  }
+
+  .btn-demo:hover {
+    opacity: 0.9;
   }
 </style>

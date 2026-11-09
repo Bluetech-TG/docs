@@ -5,20 +5,43 @@ interface Frontmatter {
   published?: string;
   updated?: string;
   description?: string;
+  lang?: "en" | "fr";
+  alternateUrl?: string;
 }
 
-// Une page Markdown avec `layout:` dans son frontmatter reçoit ces champs
-// nichés sous `frontmatter`, pas comme props directes — voir
-// https://docs.astro.build/en/guides/markdown-content/#frontmatter-layout
 interface Props {
   frontmatter: Frontmatter;
 }
 
-const { title, project, published, updated, description } = Astro.props.frontmatter;
+const { title, project, published, updated, description, lang: explicitLang, alternateUrl: explicitAlt } = Astro.props.frontmatter;
+
+// Automatic language detection from path if not explicitly provided
+// Paths containing '/fr/' are French, otherwise English by default!
+const pathname = Astro.url.pathname;
+const isFr = explicitLang === "fr" || pathname.includes("/fr/");
+const lang = isFr ? "fr" : "en";
+
+// Automatic alternate URL computation
+let alternateUrl = explicitAlt;
+if (!alternateUrl) {
+  if (isFr) {
+    alternateUrl = pathname.replace("/fr/", "/");
+  } else {
+    const baseMatch = pathname.match(/^\/docs\/([^/]+)\/(.*)$/);
+    if (baseMatch) {
+      const projectSlug = baseMatch[1];
+      const rest = baseMatch[2];
+      alternateUrl = `/docs/${projectSlug}/fr/${rest}`;
+    }
+  }
+}
+
+const enUrl = isFr ? alternateUrl : pathname;
+const frUrl = isFr ? pathname : alternateUrl;
 ---
 
 <!doctype html>
-<html lang="fr">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -30,16 +53,41 @@ const { title, project, published, updated, description } = Astro.props.frontmat
   <body>
     <div class="page">
       <header class="header">
-        <span class="project-label">{project}</span>
+        <div class="header-inner">
+          <span class="project-label">{project}</span>
+          <nav class="lang-switch" aria-label={isFr ? "Changer de langue" : "Change language"}>
+            {isFr ? (
+              <a href={enUrl} class="lang-btn">EN</a>
+            ) : (
+              <span class="lang-btn active" aria-current="page">EN</span>
+            )}
+            <span class="lang-sep">/</span>
+            {isFr ? (
+              <span class="lang-btn active" aria-current="page">FR</span>
+            ) : (
+              <a href={frUrl} class="lang-btn">FR</a>
+            )}
+          </nav>
+        </div>
       </header>
 
       <main class="content">
         <h1>{title}</h1>
         {(published || updated) && (
           <p class="updated">
-            {published && <>Publié le {published}</>}
-            {published && updated && " · "}
-            {updated && <>Dernière mise à jour : {updated}</>}
+            {isFr ? (
+              <>
+                {published && <>Publié le {published}</>}
+                {published && updated && " · "}
+                {updated && <>Dernière mise à jour : {updated}</>}
+              </>
+            ) : (
+              <>
+                {published && <>Published: {published}</>}
+                {published && updated && " · "}
+                {updated && <>Last updated: {updated}</>}
+              </>
+            )}
           </p>
         )}
         <slot name="hero" />
@@ -49,7 +97,11 @@ const { title, project, published, updated, description } = Astro.props.frontmat
       </main>
 
       <footer class="footer">
-        <p>Cette page ne référence aucun autre projet ni aucune autre page de ce site.</p>
+        <p>
+          {isFr
+            ? "Cette page ne référence aucun autre projet ni aucune autre page de ce site."
+            : "This page does not reference any other project or page on this site."}
+        </p>
       </footer>
     </div>
   </body>
@@ -107,6 +159,14 @@ const { title, project, published, updated, description } = Astro.props.frontmat
     width: 100%;
   }
 
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 0.5rem;
+  }
+
   .project-label {
     display: inline-block;
     font-size: 0.8rem;
@@ -114,8 +174,38 @@ const { title, project, published, updated, description } = Astro.props.frontmat
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--fg-muted);
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--border);
+  }
+
+  .lang-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .lang-btn {
+    color: var(--fg-muted);
+    text-decoration: none;
+    padding: 0.15rem 0.35rem;
+    border-radius: 4px;
+    transition: color 0.15s, background-color 0.15s;
+  }
+
+  .lang-btn:hover {
+    color: var(--fg);
+    background-color: var(--border);
+  }
+
+  .lang-btn.active {
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .lang-sep {
+    color: var(--fg-muted);
+    opacity: 0.5;
+    font-size: 0.75rem;
   }
 
   .content {

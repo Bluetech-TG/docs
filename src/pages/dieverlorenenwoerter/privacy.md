@@ -1,86 +1,56 @@
 ---
 layout: ../../layouts/Legal.astro
-title: Politique de confidentialité — Die verlorenen Wörter
+title: Privacy Policy — Die verlorenen Wörter
 project: Die verlorenen Wörter
-published: 18 septembre 2026
-updated: 18 septembre 2026
-description: Politique de confidentialité de l'application Die verlorenen Wörter.
+published: September 18, 2026
+updated: November 9, 2026
+description: Privacy Policy for the mobile game Die verlorenen Wörter by Bluetech TG.
 ---
 
-## Qui sommes-nous
+## About Us
 
-Die verlorenen Wörter est un jeu mobile édité par Bluetech TG, pour
-apprendre l'allemand en jouant. Contact : bluetechtg@gmail.com.
+Die verlorenen Wörter is a mobile game published by Bluetech TG to learn German through play.  
+Contact: **bluetechtg@gmail.com**.
 
-## Ce que fait l'application
+## How the Game Works
 
-Dès ton premier lancement, un compte est créé silencieusement pour que ta
-progression (chapitres terminés, mots appris, réglages) puisse être
-sauvegardée et retrouvée si tu changes de téléphone. Tu peux ensuite, si
-tu le souhaites, lier ce compte à ton email, ton numéro de téléphone, ton
-compte Google ou ton compte Apple — ce n'est jamais obligatoire pour
-jouer.
+When you first launch the game, a technical user account is created silently so your progress (completed chapters, learned vocabulary, settings) can be saved and restored if you switch phones. You can optionally link this profile to your email address, phone number, Google account, or Apple account — this is never mandatory to play.
 
-## Les données que nous traitons
+## Data We Process
 
-- **Ta progression de jeu** : chapitres terminés, mots que tu as appris et
-  leur état de révision, réussites et échecs aux exercices. Stockée sur
-  ton appareil et synchronisée avec nos serveurs pour que tu puisses
-  continuer sur un autre appareil et jouer hors connexion.
-- **Ton compte** : un identifiant technique créé automatiquement, et —
-  seulement si tu choisis de les ajouter — ton email, ton numéro de
-  téléphone, ou les informations transmises par Google/Apple lors d'une
-  connexion via ces services (uniquement pour t'identifier, jamais pour
-  du marketing).
+- **Your Game Progress**: completed chapters, vocabulary words learned and their spaced repetition status, exercise scores. Stored on your device and synchronized with our servers for offline play and cross-device continuity.
+- **Your Account**: an automated technical identifier, and — only if you choose to add them — your email, phone number, or credentials provided via Google/Apple sign-in (strictly for authentication, never for marketing).
 
-Ces données sont stockées sur nos serveurs, chiffrées pendant leur
-transport (HTTPS), et ne sont **jamais vendues ni partagées avec un tiers**
-à des fins publicitaires.
+This data is stored securely on our servers, encrypted in transit (HTTPS), and is **never sold or shared with third parties** for advertising purposes.
 
-## Ce que l'application ne fait pas
+## What the App Does NOT Do
 
-- Elle ne contient **aucune régie publicitaire**.
-- Elle n'enregistre **pas** ta voix ou ton microphone : les exercices de
-  prononciation se valident aujourd'hui en confirmant toi-même que tu as
-  dit la phrase, pas par reconnaissance vocale automatique. Cette page
-  sera mise à jour si ça change.
-- Elle ne suit **pas** ta position géographique.
-- Elle ne lit pas tes contacts, tes messages ou ton historique de
-  navigation.
+- Contains **no advertising networks**.
+- Does **not** record your microphone or voice: pronunciation exercises are self-evaluated by confirming you spoke the phrase.
+- Does **not** track your GPS location.
+- Does **not** read your contacts, text messages, or browsing history.
 
 ## Notifications
 
-L'application peut te proposer un rappel quotidien pour continuer à
-jouer. Ce rappel est programmé **directement sur ton téléphone** ; rien
-n'est envoyé à nos serveurs pour ça, et tu peux le désactiver à tout
-moment dans les réglages de ton téléphone.
+The game can schedule an optional daily reminder to help you practice regularly. This reminder is scheduled **locally on your device**; nothing is sent to our servers, and you can disable it at any time in device settings.
 
-## Services externes utilisés
+## Third-Party Services Used
 
-- **Google / Apple (connexion optionnelle)** : si tu choisis de te
-  connecter avec l'un de ces comptes, l'authentification passe par leurs
-  services (OAuth), selon leurs propres politiques de confidentialité.
-- **Mises à jour de l'application** (Expo) : l'application vérifie et
-  télécharge ses propres mises à jour via l'infrastructure d'Expo, comme
-  n'importe quelle application qui se met à jour.
+- **Google / Apple (optional sign-in)**: used only if you choose to link your account via OAuth.
+- **Application Updates** (Expo): the app checks and downloads its updates via Expo infrastructure.
 
-## Suppression de tes données
+## Account & Data Deletion
 
-Tu peux demander la suppression de ton compte et de tes données à tout
-moment en écrivant à bluetechtg@gmail.com.
+You can request the complete deletion of your account and data at any time by writing to **bluetechtg@gmail.com**.
 
-## Enfants
+## Children's Privacy
 
-Die verlorenen Wörter n'est pas spécifiquement conçue ni commercialisée
-pour les enfants de moins de 13 ans, et ne collecte pas sciemment de
-données les concernant.
+Die verlorenen Wörter is not aimed at children under 13 and does not knowingly collect personal data from children under 13.
 
-## Modifications de cette politique
+## Changes to this Policy
 
-Si cette politique change, la date de mise à jour en haut de la page sera
-actualisée.
+If this policy is updated, the date at the top of the page will be revised.
 
 ## Contact
 
-Pour toute question sur cette politique ou sur tes données :
-**bluetechtg@gmail.com**.
+For questions about this policy or your data: **bluetechtg@gmail.com**.

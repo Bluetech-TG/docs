@@ -1,58 +1,59 @@
 ---
 layout: ../../layouts/Legal.astro
-title: Conditions d'utilisation — Deliv
+title: Terms of Service — Deliv
 project: Deliv
-published: 9 novembre 2026
-updated: 9 novembre 2026
-description: Conditions d'utilisation de l'application Deliv.
+published: November 9, 2026
+updated: November 9, 2026
+description: Terms of Service for the Deliv mobile application by Bluetech TG.
 ---
 
-## Objet
+## Purpose
 
-Les présentes Conditions d'utilisation régissent l'usage de l'application mobile **Deliv** développée et éditée par **Bluetech TG**. En installant et en utilisant l'application, tu acceptes ces conditions dans leur intégralité.
+These Terms of Service govern your access to and use of the **Deliv** mobile application developed and published by **Bluetech TG**. By downloading, installing, or using the app, you agree to these terms in full.
 
-## Qui sommes-nous
+## About Us
 
-Deliv est une application mobile éditée par Bluetech TG, destinée aux livreurs indépendants pour organiser leurs tournées de livraison, gérer leurs colis et suivre leurs finances de travail. Contact : **bluetechtg@gmail.com**.
+Deliv is a mobile application developed and operated by Bluetech TG, designed for independent delivery riders and couriers to organize delivery routes, manage packages, and track earnings.  
+Contact: **bluetechtg@gmail.com**.
 
-## Description de l'application
+## Description of the Application
 
-Deliv est un outil d'organisation personnelle fonctionnant principalement hors ligne (*offline-first*). L'application te permet de :
-- Organiser tes tournées quotidiennes et enregistrer tes colis ;
-- Optimiser l'ordre de passage de tes livraisons grâce à un service public de calcul d'itinéraires ;
-- Suivre les montants dus et les commissions avec tes marchands partenaires ;
-- Sauvegarder et exporter tes données localement (format JSON ou tableur).
+Deliv is a personal organization tool designed with an offline-first architecture. It enables delivery drivers to:
+- Organize daily delivery runs and track packages;
+- Optimize stop sequences using public routing services;
+- Track amounts collected, balances due, and commissions with merchant partners;
+- Locally backup and export delivery records (JSON or spreadsheet formats).
 
-Deliv n'est pas un service d'expédition ou de transport de marchandises et n'intervient pas dans les relations contractuelles, tarifaires ou financières entre toi, tes clients et tes marchands.
+Deliv is not a shipping company, freight carrier, or courier brokerage service. Bluetech TG does not intervene in commercial, contractual, or payment disputes between you, your clients, and your merchants.
 
-## Données et absence de compte en ligne
+## Account & Local Data Privacy
 
-- Deliv **ne demande aucune création de compte** utilisateur en ligne (ni identifiant, ni mot de passe).
-- Toutes tes données (colis, contacts clients et marchands, montants financiers, photos de colis) sont enregistrées **exclusivement sur ton appareil** dans une base de données locale.
-- Tu es responsable de la sauvegarde de tes données. En cas de perte, vol ou réinitialisation de ton téléphone, aucune récupération à distance n'est possible, car Deliv ne conserve aucune copie sur un serveur distant.
+- Deliv **does not require creating an online user account** (no email or password required).
+- All data entered into the application (package records, client/merchant names, phone numbers, delivery notes, and photos) is stored **strictly on your device** in a local SQLite database.
+- You are solely responsible for creating regular backups of your data using the Export tool in Settings. If you lose, damage, or wipe your phone, data cannot be recovered remotely by Bluetech TG because no copy is stored on our servers.
 
-## Sécurité routière et usage responsable
+## Road Safety & Responsible Driving
 
-- Tu t'engages à respecter le Code de la route en vigueur dans ton pays de circulation.
-- **Ne manipule jamais l'application pendant la conduite** de ton véhicule ou engin motorisé. Les consultations et saisies doivent impérativement se faire à l'arrêt, en lieu sûr.
-- Bluetech TG décline toute responsabilité pour tout dommage matériel, corporel, contravention ou accident survenu dans le cadre de ton activité de livraison.
+- You agree to adhere strictly to all applicable road safety regulations and traffic laws.
+- **Never manipulate or interact with the application while driving or operating a vehicle** (motorcycle, car, bicycle, scooter). All interactions must be made while safely parked.
+- Bluetech TG disclaims all liability for any accidents, personal injuries, property damage, or traffic violations occurring during your delivery activities.
 
-## Disponibilité et services tiers
+## Third-Party Services & Routing
 
-Deliv s'appuie sur des services externes pour certaines fonctionnalités :
-- Calcul d'itinéraires (service public OSRM) ;
-- Redirection vers des applications de navigation installées sur ton appareil (Google Maps, Waze).
+Deliv uses external third-party services to deliver select features:
+- Routing and trip calculation (OSRM open-source public service);
+- External turn-by-turn navigation apps (Google Maps, Waze).
 
-Ces services sont fournis à titre indicatif. Bluetech TG ne peut garantir l'exactitude permanente, la disponibilité ininterrompue ou l'absence d'erreurs des itinéraires calculés.
+Estimations of travel time, route directions, and distances are provided for informational convenience only. Bluetech TG does not guarantee the permanent accuracy or real-time road condition reliability of routing suggestions.
 
-## Propriété intellectuelle
+## Intellectual Property
 
-L'ensemble des droits de propriété intellectuelle afférents à l'application Deliv (code source, logos, interfaces, graphismes) demeure la propriété exclusive de Bluetech TG. Toute reproduction, décompilation ou diffusion non autorisée est interdite.
+All software, trademarks, logos, visual layouts, and source code of Deliv remain the exclusive intellectual property of Bluetech TG. Any unauthorized copying, decompilation, distribution, or reproduction is strictly prohibited.
 
-## Modification des conditions
+## Modifications to these Terms
 
-Bluetech TG se réserve le droit de modifier les présentes conditions d'utilisation à tout moment afin de refléter l'évolution de l'application ou des obligations légales. La version applicable est celle publiée en ligne sur cette page.
+Bluetech TG reserves the right to amend these Terms of Service at any time. The current version will always be accessible at this URL.
 
 ## Contact
 
-Pour toute question concernant l'utilisation de Deliv ou les présentes conditions : **bluetechtg@gmail.com**.
+For any questions regarding these Terms or the application: **bluetechtg@gmail.com**.

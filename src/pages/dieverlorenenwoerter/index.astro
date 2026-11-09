@@ -3,8 +3,6 @@ import Legal from "../../layouts/Legal.astro";
 
 const base = import.meta.env.BASE_URL;
 
-// Google Play : l'URL est déterministe à partir du package id (app.json), donc déjà la
-// vraie une fois l'app publiée — pas besoin de la remplacer plus tard.
 const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=com.bluetechtg.dieverlorenenwoerter";
 ---
@@ -13,68 +11,66 @@ const PLAY_STORE_URL =
   frontmatter={{
     title: "Die verlorenen Wörter",
     project: "Die verlorenen Wörter",
-    published: "18 septembre 2026",
-    updated: "18 septembre 2026",
-    description: "Die verlorenen Wörter — apprends l'allemand en jouant, une aventure narrative à Nebelstein.",
+    published: "September 18, 2026",
+    updated: "November 9, 2026",
+    description: "Die verlorenen Wörter — Learn German through play, an interactive narrative adventure in Nebelstein.",
   }}
 >
   <Fragment slot="hero">
     <div class="hero">
       <img class="icon" src={`${base}dieverlorenenwoerter/icon.png`} alt="" width="88" height="88" />
-      <p class="tagline">Apprends l'allemand en jouant : une aventure à Nebelstein.</p>
+      <p class="tagline">Learn German through play: a narrative adventure in Nebelstein.</p>
       <div class="badges">
-        <a href={PLAY_STORE_URL} aria-label="Disponible sur Google Play">
-          <img src={`${base}dieverlorenenwoerter/google-badge.png`} alt="Disponible sur Google Play" height="44" />
+        <a href={PLAY_STORE_URL} aria-label="Available on Google Play">
+          <img src={`${base}dieverlorenenwoerter/google-badge.png`} alt="Available on Google Play" height="44" />
         </a>
       </div>
     </div>
   </Fragment>
 
   <p>
-    Nebelstein est frappée par le Silence&nbsp;: ses habitants ont perdu leurs mots. Dans Die
-    verlorenen Wörter, tu incarnes le messager qui va les leur rendre, un par un — en apprenant
-    vraiment l'allemand au passage.
+    Nebelstein has been struck by the Silence: its inhabitants have lost their words. In Die
+    verlorenen Wörter, you are the messenger tasked with restoring them, one by one — learning real
+    German along the way.
   </p>
   <p>
-    Ici, pas d'écran "Exercice 3/10"&nbsp;: chaque mot que tu retrouves fait avancer l'histoire,
-    débloque un personnage ou ouvre un nouveau lieu.
+    No repetitive quiz drills: each word you restore advances the storyline, unlocks a character,
+    or opens up a new location.
   </p>
 
-  <h2>Une histoire, pas un manuel</h2>
+  <h2>A Story, Not a Textbook</h2>
   <ul>
-    <li>Une aventure narrative complète (arc 1, 10 chapitres) avec des personnages qui se souviennent de tes choix.</li>
-    <li>Otto, Mira, Jonas, Herr Falk&nbsp;: chacun t'aide et apprend différemment.</li>
-    <li>Ta relation avec les personnages évolue et débloque des chapitres bonus.</li>
+    <li>A complete narrative journey (Arc 1, 10 chapters) with characters who remember your choices.</li>
+    <li>Otto, Mira, Jonas, Herr Falk: each character assists you with unique teaching dynamics.</li>
+    <li>Your relationships with characters grow and unlock bonus story chapters.</li>
   </ul>
 
-  <h2>Apprendre en jouant</h2>
+  <h2>Learn by Playing</h2>
   <ul>
-    <li>Retrouve un mot à partir d'images (4 images, 1 mot).</li>
-    <li>Complète des textes à trous, des dictées, des documents à enquêter.</li>
-    <li>Écoute des dialogues et des messages vocaux pour comprendre l'histoire.</li>
-    <li>Répète des formules pour progresser en prononciation.</li>
-    <li>Fais parler les bons personnages au bon moment (dialogues à choix).</li>
-    <li>Remets une phrase brisée dans le bon ordre.</li>
+    <li>Guess words from contextual clues and images (4 images, 1 word).</li>
+    <li>Complete fill-in-the-blank dialogues, listen to voice recordings, and solve mysteries.</li>
+    <li>Dialogue choice challenges to speak with the right character at the right moment.</li>
+    <li>Unscramble broken sentences and practice real grammar patterns.</li>
   </ul>
 
-  <h2>Le Wörterbuch</h2>
-  <p>Chaque mot appris est révisé au bon moment grâce à la répétition espacée, pour ne jamais l'oublier.</p>
+  <h2>The Wörterbuch</h2>
+  <p>Every word you learn is reinforced using spaced repetition so it stays in your memory permanently.</p>
 
-  <h2>Pensée pour jouer partout</h2>
+  <h2>Play Anywhere</h2>
   <ul>
-    <li>Fonctionne hors connexion&nbsp;: ta progression se synchronise dès que tu retrouves du réseau.</li>
-    <li>Continue sur un autre appareil sans rien perdre.</li>
-    <li>Rappel quotidien (désactivable) pour ne pas perdre le fil du Silence.</li>
+    <li>Works offline: progress synchronizes smoothly whenever connectivity is restored.</li>
+    <li>Continue your adventure across multiple devices.</li>
+    <li>Optional daily reminders to keep up your momentum.</li>
   </ul>
 
   <p>
-    Le premier arc, "Ankunft", est gratuit du début à la fin. Niveau A1, pensé pour un vrai
-    débutant en allemand.
+    The first arc, "Ankunft", is completely free from start to finish. Geared for A1 level
+    beginners in German.
   </p>
 
   <hr />
   <p>
-    <a href={`${base}dieverlorenenwoerter/privacy/`}>Politique de confidentialité</a> · <a href={`${base}dieverlorenenwoerter/terms/`}>Conditions d'utilisation</a> · Contact&nbsp;:
+    <a href={`${base}dieverlorenenwoerter/privacy/`}>Privacy Policy</a> · <a href={`${base}dieverlorenenwoerter/terms/`}>Terms of Service</a> · Contact:&nbsp;
     bluetechtg@gmail.com
   </p>
 </Legal>

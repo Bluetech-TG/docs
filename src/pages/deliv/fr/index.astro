@@ -1,0 +1,175 @@
+---
+import Legal from "../../../layouts/Legal.astro";
+
+const base = import.meta.env.BASE_URL;
+
+// Google Play : l'URL est déterministe à partir du package id (app.json), donc déjà la
+// vraie une fois l'app publiée — pas besoin de la remplacer plus tard.
+const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.bluetechtg.deliv";
+// App Store : l'id numérique n'existe qu'une fois l'app créée dans App Store Connect —
+// lien fictif à remplacer une fois connu (voir consigne de l'utilisateur).
+const APP_STORE_URL = "https://apps.apple.com/app/id0000000000";
+---
+
+<Legal
+  frontmatter={{
+    title: "Deliv",
+    project: "Deliv",
+    published: "16 septembre 2026",
+    updated: "16 septembre 2026",
+    description: "Deliv — organise tes tournées, tes colis et tes finances de livreur, simplement.",
+  }}
+>
+  <Fragment slot="hero">
+    <div class="hero">
+      <img class="icon" src={`${base}deliv/icon.png`} alt="" width="88" height="88" />
+      <p class="tagline">
+        Organise tes tournées, tes colis et tes finances de livreur, simplement.
+      </p>
+      <div class="badges">
+        <a href={APP_STORE_URL} aria-label="Télécharger sur l'App Store">
+          <img src={`${base}deliv/apple-badge.svg`} alt="Télécharger sur l'App Store" height="44" />
+        </a>
+        <a href={PLAY_STORE_URL} aria-label="Disponible sur Google Play">
+          <img src={`${base}deliv/google-badge.png`} alt="Disponible sur Google Play" height="44" />
+        </a>
+      </div>
+    </div>
+
+    <div class="screenshots" role="list">
+      {
+        [
+          ["01-accueil-mes-tournees.png", "Écran d'accueil : liste des tournées du jour"],
+          ["02-fiche-tournee-colis.png", "Fiche tournée : liste des colis"],
+          ["03-finances-benefice-net.png", "Finances : bénéfice net"],
+          ["04-marchands-relance.png", "Liste des marchands"],
+          ["05-reglages-langue-fr-en.png", "Réglages : sélecteur de langue"],
+        ].map(([file, alt]) => (
+          <img
+            role="listitem"
+            class="screenshot"
+            src={`${base}deliv/screenshots/${file}`}
+            alt={alt}
+            loading="lazy"
+          />
+        ))
+      }
+    </div>
+  </Fragment>
+
+  <p>
+    Deliv est l'application pensée pour le livreur indépendant qui en a marre de gérer ses
+    tournées sur WhatsApp, sur papier ou de mémoire.
+  </p>
+  <p>
+    Fini les notes éparpillées et les calculs approximatifs en fin de journée&nbsp;: Deliv
+    centralise tes tournées, tes colis, tes clients, tes marchands et tes vraies finances au
+    même endroit, directement sur ton téléphone.
+  </p>
+
+  <h2>Tournées et colis</h2>
+  <ul>
+    <li>Crée une tournée par jour et ajoute tes colis (quartier, client, téléphone, position).</li>
+    <li>Colle une liste de commandes reçue sur WhatsApp&nbsp;: Deliv la découpe automatiquement en colis.</li>
+    <li>Coche chaque colis au fur et à mesure des livraisons, signale un problème (client absent, adresse introuvable...) sans le perdre de vue.</li>
+    <li>Réorganise l'ordre de ta tournée en glisser-déposer, ou laisse Deliv calculer le meilleur itinéraire.</li>
+    <li>Ouvre directement Waze ou Google Maps vers chaque adresse.</li>
+  </ul>
+
+  <h2>Favoris et marchands</h2>
+  <ul>
+    <li>Enregistre tes clients réguliers pour remplir un colis en un tap, sans tout retaper.</li>
+    <li>Associe tes colis aux marchands pour qui tu livres, et suis en un coup d'œil ce que tu dois encore leur rendre.</li>
+    <li>Partage un relevé de compte propre avec chaque marchand (image prête à envoyer).</li>
+  </ul>
+
+  <h2>Tes vraies finances</h2>
+  <ul>
+    <li>Gains de livraison, dépenses (carburant, forfait...), ce que tu dois encore reverser à chaque marchand&nbsp;: le vrai bénéfice net, pas une estimation à la louche.</li>
+    <li>Graphique de rentabilité sur 7 ou 30 jours.</li>
+    <li>Objectif quotidien et rappel de fin de journée pour ne rien oublier de saisir.</li>
+  </ul>
+
+  <h2>Pensée pour le terrain</h2>
+  <ul>
+    <li>Fonctionne sans connexion pour l'essentiel&nbsp;: toutes tes données restent sur ton téléphone, pas de compte à créer.</li>
+    <li>Recherche instantanée dans tes colis, favoris et marchands.</li>
+    <li>Photo du colis et preuve de livraison, utile en cas de litige.</li>
+    <li>Export de tes données (Excel), sauvegarde et restauration.</li>
+    <li>Disponible en français et en anglais.</li>
+  </ul>
+
+  <p>
+    Deliv ne demande aucun abonnement ni frais caché&nbsp;: c'est un outil simple, rapide, conçu
+    pour le quotidien d'un livreur indépendant.
+  </p>
+
+  <hr />
+  <p>
+    <a href={`${base}deliv/fr/privacy/`}>Politique de confidentialité</a> · <a href={`${base}deliv/fr/terms/`}>Conditions d'utilisation</a> · Contact&nbsp;:
+    bluetechtg@gmail.com
+  </p>
+</Legal>
+
+<style>
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.9rem;
+    margin: 0.5rem 0 2rem;
+  }
+
+  .icon {
+    border-radius: 22%;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.15);
+  }
+
+  .tagline {
+    color: var(--fg-muted);
+    font-size: 1.05rem;
+    max-width: 40ch;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .badges {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .badges img {
+    display: block;
+    height: 44px;
+    width: auto;
+  }
+
+  .screenshots {
+    display: flex;
+    gap: 0.9rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0.25rem 0 2rem;
+    margin: 0 -1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .screenshot {
+    height: 340px;
+    width: auto;
+    flex-shrink: 0;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    scroll-snap-align: start;
+  }
+
+  @media (max-width: 640px) {
+    .screenshot {
+      height: 280px;
+    }
+  }
+</style>

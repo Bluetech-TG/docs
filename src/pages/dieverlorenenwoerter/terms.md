@@ -1,52 +1,52 @@
 ---
 layout: ../../layouts/Legal.astro
-title: Conditions d'utilisation — Die verlorenen Wörter
+title: Terms of Service — Die verlorenen Wörter
 project: Die verlorenen Wörter
-published: 9 novembre 2026
-updated: 9 novembre 2026
-description: Conditions d'utilisation du jeu mobile Die verlorenen Wörter.
+published: November 9, 2026
+updated: November 9, 2026
+description: Terms of Service for the mobile game Die verlorenen Wörter.
 ---
 
-## Objet
+## Purpose
 
-Les présentes Conditions Générales d'Utilisation régissent l'accès et l'utilisation du jeu mobile **Die verlorenen Wörter**, édité par **Bluetech TG**. En téléchargeant, installant ou utilisant le jeu, tu acceptes ces conditions sans réserve.
+These Terms of Service govern your access to and use of the mobile game **Die verlorenen Wörter**, developed and published by **Bluetech TG**. By downloading, installing, or playing the game, you agree to these terms in full.
 
-## Qui sommes-nous
+## About Us
 
-Die verlorenen Wörter est un jeu mobile ludo-éducatif édité par **Bluetech TG**, conçu pour permettre l'apprentissage de la langue allemande à travers une aventure narrative immersive. Contact : **bluetechtg@gmail.com**.
+Die verlorenen Wörter is an educational mobile narrative adventure published by **Bluetech TG**, designed to help players learn the German language through an immersive interactive story.  
+Contact: **bluetechtg@gmail.com**.
 
-## Compte et accès au service
+## Account & Access
 
-- **Création automatique** : Dès le premier lancement du jeu, un compte technique est automatiquement créé afin d'enregistrer ta progression (chapitres complétés, vocabulaire appris, réglages).
-- **Liaison optionnelle** : Tu as la possibilité de lier ce profil à une adresse e-mail, un numéro de téléphone ou un compte tiers (Google, Apple) pour faciliter la récupération de ta progression sur un nouvel appareil.
-- **Sécurité** : Tu es responsable du maintien de la confidentialité de tes identifiants de connexion le cas échéant.
-- **Suppression du compte** : Tu peux demander la suppression définitive de ton compte et de l'ensemble des données associées à tout moment en écrivant à **bluetechtg@gmail.com**.
+- **Automatic Account Creation**: When launching the game for the first time, an anonymous technical account is automatically generated so your game progress (completed chapters, learned vocabulary, preferences) is preserved.
+- **Optional Account Linking**: You may link this profile to an email address, phone number, or third-party sign-in (Google, Apple) to restore your progress across devices.
+- **Account Deletion**: You can request permanent deletion of your account and associated game data at any time by emailing **bluetechtg@gmail.com**.
 
-## Utilisation du service et gratuité
+## Gameplay & Pricing
 
-- Le premier arc narratif (*Ankunft*, 10 chapitres) est mis à disposition gratuitement.
-- Des arcs supplémentaires ou fonctionnalités additionnelles pourront éventuellement être proposés à l'achat via les boutiques d'applications officielles (Google Play Store, Apple App Store).
-- Le jeu fonctionne partiellement hors-ligne. Une connexion Internet périodique est requise pour synchroniser ta progression avec nos serveurs et recevoir les mises à jour de contenu.
+- The first story arc (*Ankunft*, 10 chapters) is provided free of charge.
+- Additional story arcs or expansion content may be offered for purchase via official app stores (Google Play Store, Apple App Store).
+- The game can be played offline. An internet connection is periodically needed to synchronize progress with our servers and download updates.
 
-## Règles d'utilisation
+## Acceptable Use
 
-En utilisant l'application, tu t'engages à ne pas :
-- Tenter de décompiler, désassembler, modifier ou copier le code source, les illustrations, musiques, voix ou textes du jeu ;
-- Utiliser des logiciels automatisés (bots, émulateurs modifiés, scripts) pour falsifier ta progression ou contourner le fonctionnement normal du jeu ;
-- Porter atteinte à l'intégrité de nos serveurs et infrastructures techniques.
+By using the application, you agree not to:
+- Decompile, reverse engineer, modify, or distribute the game source code, artwork, audio recordings, or text;
+- Use automated scripts, bots, or modified clients to falsify progress or manipulate game systems;
+- Disrupt or overburden our server infrastructure.
 
-## Propriété intellectuelle
+## Intellectual Property
 
-L'ensemble des contenus composant **Die verlorenen Wörter** — y compris, sans limitation, les univers narratifs, scénarios, dialogues, graphismes, personnages (Otto, Mira, Jonas, Herr Falk...), animations, effets sonores et marque — est la propriété intellectuelle exclusive de **Bluetech TG**. Aucun droit de propriété n'est transféré à l'utilisateur au titre de l'utilisation du jeu.
+All content within **Die verlorenen Wörter** — including story arcs, dialogue, character illustrations (Otto, Mira, Jonas, Herr Falk), animations, sound effects, and trademarks — remains the exclusive intellectual property of **Bluetech TG**.
 
-## Disponibilité et garanties
+## Disclaimer & Limitations
 
-L'application est fournie « en l'état » et selon sa disponibilité. Bluetech TG met en œuvre les moyens raisonnables pour assurer un fonctionnement stable et continu du service, mais ne saurait garantir l'absence totale d'interruptions techniques, de bugs ou d'incompatibilités avec certains appareils.
+The application is provided "as is" and on an "as available" basis. Bluetech TG strives to maintain continuous service but cannot guarantee uninterrupted or error-free gameplay across all device models.
 
-## Modification des conditions
+## Changes to these Terms
 
-Bluetech TG se réserve le droit d'actualiser les présentes conditions d'utilisation afin de les adapter aux évolutions du jeu ou de la réglementation. La version en vigueur est celle consultable à cette URL.
+Bluetech TG reserves the right to amend these terms at any time. The up-to-date version is published at this URL.
 
 ## Contact
 
-Pour toute question ou demande relative à ces conditions d'utilisation : **bluetechtg@gmail.com**.
+For questions regarding these Terms: **bluetechtg@gmail.com**.

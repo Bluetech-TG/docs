@@ -1,0 +1,117 @@
+---
+import Legal from "../../../layouts/Legal.astro";
+
+const base = import.meta.env.BASE_URL;
+
+// Google Play : l'URL est déterministe à partir du package id (app.json), donc déjà la
+// vraie une fois l'app publiée — pas besoin de la remplacer plus tard.
+const PLAY_STORE_URL =
+  "https://play.google.com/store/apps/details?id=com.bluetechtg.dieverlorenenwoerter";
+---
+
+<Legal
+  frontmatter={{
+    title: "Die verlorenen Wörter",
+    project: "Die verlorenen Wörter",
+    published: "18 septembre 2026",
+    updated: "18 septembre 2026",
+    description: "Die verlorenen Wörter — apprends l'allemand en jouant, une aventure narrative à Nebelstein.",
+  }}
+>
+  <Fragment slot="hero">
+    <div class="hero">
+      <img class="icon" src={`${base}dieverlorenenwoerter/icon.png`} alt="" width="88" height="88" />
+      <p class="tagline">Apprends l'allemand en jouant : une aventure à Nebelstein.</p>
+      <div class="badges">
+        <a href={PLAY_STORE_URL} aria-label="Disponible sur Google Play">
+          <img src={`${base}dieverlorenenwoerter/google-badge.png`} alt="Disponible sur Google Play" height="44" />
+        </a>
+      </div>
+    </div>
+  </Fragment>
+
+  <p>
+    Nebelstein est frappée par le Silence&nbsp;: ses habitants ont perdu leurs mots. Dans Die
+    verlorenen Wörter, tu incarnes le messager qui va les leur rendre, un par un — en apprenant
+    vraiment l'allemand au passage.
+  </p>
+  <p>
+    Ici, pas d'écran "Exercice 3/10"&nbsp;: chaque mot que tu retrouves fait avancer l'histoire,
+    débloque un personnage ou ouvre un nouveau lieu.
+  </p>
+
+  <h2>Une histoire, pas un manuel</h2>
+  <ul>
+    <li>Une aventure narrative complète (arc 1, 10 chapitres) avec des personnages qui se souviennent de tes choix.</li>
+    <li>Otto, Mira, Jonas, Herr Falk&nbsp;: chacun t'aide et apprend différemment.</li>
+    <li>Ta relation avec les personnages évolue et débloque des chapitres bonus.</li>
+  </ul>
+
+  <h2>Apprendre en jouant</h2>
+  <ul>
+    <li>Retrouve un mot à partir d'images (4 images, 1 mot).</li>
+    <li>Complète des textes à trous, des dictées, des documents à enquêter.</li>
+    <li>Écoute des dialogues et des messages vocaux pour comprendre l'histoire.</li>
+    <li>Répète des formules pour progresser en prononciation.</li>
+    <li>Fais parler les bons personnages au bon moment (dialogues à choix).</li>
+    <li>Remets une phrase brisée dans le bon ordre.</li>
+  </ul>
+
+  <h2>Le Wörterbuch</h2>
+  <p>Chaque mot appris est révisé au bon moment grâce à la répétition espacée, pour ne jamais l'oublier.</p>
+
+  <h2>Pensée pour jouer partout</h2>
+  <ul>
+    <li>Fonctionne hors connexion&nbsp;: ta progression se synchronise dès que tu retrouves du réseau.</li>
+    <li>Continue sur un autre appareil sans rien perdre.</li>
+    <li>Rappel quotidien (désactivable) pour ne pas perdre le fil du Silence.</li>
+  </ul>
+
+  <p>
+    Le premier arc, "Ankunft", est gratuit du début à la fin. Niveau A1, pensé pour un vrai
+    débutant en allemand.
+  </p>
+
+  <hr />
+  <p>
+    <a href={`${base}dieverlorenenwoerter/fr/privacy/`}>Politique de confidentialité</a> · <a href={`${base}dieverlorenenwoerter/fr/terms/`}>Conditions d'utilisation</a> · Contact&nbsp;:
+    bluetechtg@gmail.com
+  </p>
+</Legal>
+
+<style>
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.9rem;
+    margin: 0.5rem 0 2rem;
+  }
+
+  .icon {
+    border-radius: 22%;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.15);
+  }
+
+  .tagline {
+    color: var(--fg-muted);
+    font-size: 1.05rem;
+    max-width: 40ch;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .badges {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .badges img {
+    display: block;
+    height: 44px;
+    width: auto;
+  }
+</style>

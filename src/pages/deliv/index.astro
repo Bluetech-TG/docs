@@ -3,11 +3,7 @@ import Legal from "../../layouts/Legal.astro";
 
 const base = import.meta.env.BASE_URL;
 
-// Google Play : l'URL est déterministe à partir du package id (app.json), donc déjà la
-// vraie une fois l'app publiée — pas besoin de la remplacer plus tard.
 const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.bluetechtg.deliv";
-// App Store : l'id numérique n'existe qu'une fois l'app créée dans App Store Connect —
-// lien fictif à remplacer une fois connu (voir consigne de l'utilisateur).
 const APP_STORE_URL = "https://apps.apple.com/app/id0000000000";
 ---
 
@@ -15,23 +11,23 @@ const APP_STORE_URL = "https://apps.apple.com/app/id0000000000";
   frontmatter={{
     title: "Deliv",
     project: "Deliv",
-    published: "16 septembre 2026",
-    updated: "16 septembre 2026",
-    description: "Deliv — organise tes tournées, tes colis et tes finances de livreur, simplement.",
+    published: "September 16, 2026",
+    updated: "November 9, 2026",
+    description: "Deliv — Organize your delivery routes, packages and real earnings, simply.",
   }}
 >
   <Fragment slot="hero">
     <div class="hero">
       <img class="icon" src={`${base}deliv/icon.png`} alt="" width="88" height="88" />
       <p class="tagline">
-        Organise tes tournées, tes colis et tes finances de livreur, simplement.
+        Organize your delivery routes, packages and real earnings, simply.
       </p>
       <div class="badges">
-        <a href={APP_STORE_URL} aria-label="Télécharger sur l'App Store">
-          <img src={`${base}deliv/apple-badge.svg`} alt="Télécharger sur l'App Store" height="44" />
+        <a href={APP_STORE_URL} aria-label="Download on the App Store">
+          <img src={`${base}deliv/apple-badge.svg`} alt="Download on the App Store" height="44" />
         </a>
-        <a href={PLAY_STORE_URL} aria-label="Disponible sur Google Play">
-          <img src={`${base}deliv/google-badge.png`} alt="Disponible sur Google Play" height="44" />
+        <a href={PLAY_STORE_URL} aria-label="Get it on Google Play">
+          <img src={`${base}deliv/google-badge.png`} alt="Get it on Google Play" height="44" />
         </a>
       </div>
     </div>
@@ -39,11 +35,11 @@ const APP_STORE_URL = "https://apps.apple.com/app/id0000000000";
     <div class="screenshots" role="list">
       {
         [
-          ["01-accueil-mes-tournees.png", "Écran d'accueil : liste des tournées du jour"],
-          ["02-fiche-tournee-colis.png", "Fiche tournée : liste des colis"],
-          ["03-finances-benefice-net.png", "Finances : bénéfice net"],
-          ["04-marchands-relance.png", "Liste des marchands"],
-          ["05-reglages-langue-fr-en.png", "Réglages : sélecteur de langue"],
+          ["01-accueil-mes-tournees.png", "Home screen: daily routes list"],
+          ["02-fiche-tournee-colis.png", "Route overview: parcel checklist"],
+          ["03-finances-benefice-net.png", "Finances: net profit overview"],
+          ["04-marchands-relance.png", "Merchants & client list"],
+          ["05-reglages-langue-fr-en.png", "Settings: language selection"],
         ].map(([file, alt]) => (
           <img
             role="listitem"
@@ -58,55 +54,54 @@ const APP_STORE_URL = "https://apps.apple.com/app/id0000000000";
   </Fragment>
 
   <p>
-    Deliv est l'application pensée pour le livreur indépendant qui en a marre de gérer ses
-    tournées sur WhatsApp, sur papier ou de mémoire.
+    Deliv is built for the independent delivery rider who is tired of juggling routes on WhatsApp,
+    on paper, or from memory.
   </p>
   <p>
-    Fini les notes éparpillées et les calculs approximatifs en fin de journée&nbsp;: Deliv
-    centralise tes tournées, tes colis, tes clients, tes marchands et tes vraies finances au
-    même endroit, directement sur ton téléphone.
+    No more scattered notes and rough end-of-day math: Deliv brings your routes, packages, clients,
+    merchants, and real finances together in one place, right on your phone.
   </p>
 
-  <h2>Tournées et colis</h2>
+  <h2>Routes & Packages</h2>
   <ul>
-    <li>Crée une tournée par jour et ajoute tes colis (quartier, client, téléphone, position).</li>
-    <li>Colle une liste de commandes reçue sur WhatsApp&nbsp;: Deliv la découpe automatiquement en colis.</li>
-    <li>Coche chaque colis au fur et à mesure des livraisons, signale un problème (client absent, adresse introuvable...) sans le perdre de vue.</li>
-    <li>Réorganise l'ordre de ta tournée en glisser-déposer, ou laisse Deliv calculer le meilleur itinéraire.</li>
-    <li>Ouvre directement Waze ou Google Maps vers chaque adresse.</li>
+    <li>Create one route per day and add your packages (neighborhood, client, phone, location).</li>
+    <li>Paste an order list received on WhatsApp: Deliv automatically splits it into packages.</li>
+    <li>Check off each package as you deliver, flag an issue (client absent, address not found) without losing track.</li>
+    <li>Reorder stops with easy drag-and-drop, or let Deliv calculate the optimal sequence.</li>
+    <li>Open Google Maps or Waze directly for any destination.</li>
   </ul>
 
-  <h2>Favoris et marchands</h2>
+  <h2>Favorites & Merchants</h2>
   <ul>
-    <li>Enregistre tes clients réguliers pour remplir un colis en un tap, sans tout retaper.</li>
-    <li>Associe tes colis aux marchands pour qui tu livres, et suis en un coup d'œil ce que tu dois encore leur rendre.</li>
-    <li>Partage un relevé de compte propre avec chaque marchand (image prête à envoyer).</li>
+    <li>Save frequent clients to fill in parcel details with a single tap.</li>
+    <li>Link packages to merchants you deliver for, and see at a glance what balances are pending.</li>
+    <li>Share a clean account statement with any merchant (instant image sharing).</li>
   </ul>
 
-  <h2>Tes vraies finances</h2>
+  <h2>Your Real Finances</h2>
   <ul>
-    <li>Gains de livraison, dépenses (carburant, forfait...), ce que tu dois encore reverser à chaque marchand&nbsp;: le vrai bénéfice net, pas une estimation à la louche.</li>
-    <li>Graphique de rentabilité sur 7 ou 30 jours.</li>
-    <li>Objectif quotidien et rappel de fin de journée pour ne rien oublier de saisir.</li>
+    <li>Track delivery fees, operational expenses (fuel, data plans), and balances owed: real net profit, not guesswork.</li>
+    <li>7-day and 30-day profitability charts.</li>
+    <li>Daily targets and end-of-day reminders so nothing gets missed.</li>
   </ul>
 
-  <h2>Pensée pour le terrain</h2>
+  <h2>Built for the Field</h2>
   <ul>
-    <li>Fonctionne sans connexion pour l'essentiel&nbsp;: toutes tes données restent sur ton téléphone, pas de compte à créer.</li>
-    <li>Recherche instantanée dans tes colis, favoris et marchands.</li>
-    <li>Photo du colis et preuve de livraison, utile en cas de litige.</li>
-    <li>Export de tes données (Excel), sauvegarde et restauration.</li>
-    <li>Disponible en français et en anglais.</li>
+    <li>Works offline for all daily tasks: your data stays on your phone, no account required.</li>
+    <li>Instant search across packages, frequent clients, and merchants.</li>
+    <li>Parcel photos and delivery proof records, invaluable in resolving disputes.</li>
+    <li>Data export (Excel), local backup, and restoration.</li>
+    <li>Fully bilingual in French and English.</li>
   </ul>
 
   <p>
-    Deliv ne demande aucun abonnement ni frais caché&nbsp;: c'est un outil simple, rapide, conçu
-    pour le quotidien d'un livreur indépendant.
+    Deliv requires no subscription and has no hidden fees: it is a practical tool built for the
+    daily reality of independent courier delivery.
   </p>
 
   <hr />
   <p>
-    <a href={`${base}deliv/privacy/`}>Politique de confidentialité</a> · <a href={`${base}deliv/terms/`}>Conditions d'utilisation</a> · Contact&nbsp;:
+    <a href={`${base}deliv/privacy/`}>Privacy Policy</a> · <a href={`${base}deliv/terms/`}>Terms of Service</a> · Contact:&nbsp;
     bluetechtg@gmail.com
   </p>
 </Legal>
