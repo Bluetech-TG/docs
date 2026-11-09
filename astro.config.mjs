@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  site: "https://novenopatch.github.io",
+  site: "https://bluetech-tg.github.io",
   base: "/docs",
   trailingSlash: "always",
 });
