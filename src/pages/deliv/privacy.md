@@ -11,7 +11,7 @@ description: Politique de confidentialité de l'application Deliv.
 
 Deliv est une application mobile éditée par Bluetech TG, destinée aux
 livreurs indépendants pour organiser leurs tournées de livraison. Contact :
-support@nougna.com.
+bluetechtg@gmail.com.
 
 ## Ce que Deliv ne fait pas
 
@@ -91,4 +91,4 @@ de compte utilisateur pour t'écrire.
 ## Contact
 
 Pour toute question sur cette politique ou sur tes données :
-**support@nougna.com**.
+**bluetechtg@gmail.com**.

@@ -10,7 +10,7 @@ description: Politique de confidentialité de l'application Die verlorenen Wört
 ## Qui sommes-nous
 
 Die verlorenen Wörter est un jeu mobile édité par Bluetech TG, pour
-apprendre l'allemand en jouant. Contact : support@nougna.com.
+apprendre l'allemand en jouant. Contact : bluetechtg@gmail.com.
 
 ## Ce que fait l'application
 
@@ -67,7 +67,7 @@ moment dans les réglages de ton téléphone.
 ## Suppression de tes données
 
 Tu peux demander la suppression de ton compte et de tes données à tout
-moment en écrivant à support@nougna.com.
+moment en écrivant à bluetechtg@gmail.com.
 
 ## Enfants
 
@@ -83,4 +83,4 @@ actualisée.
 ## Contact
 
 Pour toute question sur cette politique ou sur tes données :
-**support@nougna.com**.
+**bluetechtg@gmail.com**.

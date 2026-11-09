@@ -12,7 +12,7 @@ description: Politique de confidentialité de la plateforme HotelPilot Suite.
 HotelPilot Suite est une plateforme SaaS de gestion hôtelière (PMS) éditée
 par Bluetech TG, destinée aux hôtels et groupes hôteliers pour gérer leurs
 réservations, leur facturation et leurs opérations quotidiennes. Contact :
-support@nougna.com.
+bluetechtg@gmail.com.
 
 ## Deux publics concernés par cette politique
 
@@ -73,7 +73,7 @@ réutiliser à d'autres fins.
 
 Les données sont conservées tant que le compte de l'hôtel est actif. En
 cas de résiliation, l'hôtel peut demander la suppression ou l'export de
-ses données à support@nougna.com, sous réserve des durées de conservation
+ses données à bluetechtg@gmail.com, sous réserve des durées de conservation
 imposées par la réglementation comptable applicable (référentiel OHADA)
 pour certaines pièces comptables et de facturation.
 
@@ -81,7 +81,7 @@ pour certaines pièces comptables et de facturation.
 
 Pour exercer un droit d'accès, de rectification ou de suppression sur tes
 propres données de compte (personnel de l'hôtel), contacte
-support@nougna.com.
+bluetechtg@gmail.com.
 
 Si tu es un client d'un hôtel utilisant HotelPilot Suite et que tu
 souhaites exercer ces droits sur les données saisies à ton sujet lors
@@ -111,4 +111,4 @@ actualisée.
 ## Contact
 
 Pour toute question sur cette politique ou sur le traitement de tes
-données : **support@nougna.com**.
+données : **bluetechtg@gmail.com**.
