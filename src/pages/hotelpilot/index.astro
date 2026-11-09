@@ -62,6 +62,31 @@ const DEMO_URL = "https://gestionhotelapp.onrender.com/";
     <li>Role-based access permissions for front desk, accounting, managers, and housekeeping.</li>
   </ul>
 
+  <!-- HotelPilot Pulse Feature Card -->
+  <section class="mobile-companion-card">
+    <div class="companion-header">
+      <img
+        src={`${base}/hotelpilot/pulse-icon.png`}
+        alt="HotelPilot Pulse Icon"
+        class="companion-icon"
+        width="64"
+        height="64"
+      />
+      <div>
+        <span class="companion-badge">Mobile Field Companion</span>
+        <h2 class="companion-title">HotelPilot Pulse</h2>
+      </div>
+    </div>
+    <p class="companion-desc">
+      HotelPilot Suite extends beyond the reception desk. <strong>HotelPilot Pulse</strong> is the native mobile application designed for staff on the move: room cleaning checklist (dirty → clean → inspected), instant photo damage reports, key deposit tracking, mobile check-in/out, and offline corridor resilience.
+    </p>
+    <div class="companion-actions">
+      <a href={`${base}/hotelpilot/pulse/`} class="btn-pulse">Explore Mobile App (HotelPilot Pulse) →</a>
+      <a href={`${base}/hotelpilot/pulse/privacy/`} class="btn-pulse-sub">Pulse Privacy Policy</a>
+      <a href={`${base}/hotelpilot/pulse/terms/`} class="btn-pulse-sub">Pulse Terms</a>
+    </div>
+  </section>
+
   <p>
     HotelPilot Suite is available as a cloud SaaS subscription, with online demo available.
   </p>
@@ -69,8 +94,10 @@ const DEMO_URL = "https://gestionhotelapp.onrender.com/";
   <hr />
   <p>
     <a href={DEMO_URL}>Live Demo</a> ·
-    <a href={`${base}hotelpilot/privacy/`}>Privacy Policy</a> · <a href={`${base}hotelpilot/terms/`}>Terms of Service</a> · Contact:&nbsp;
-    bluetechtg@gmail.com
+    <a href={`${base}/hotelpilot/pulse/`}>HotelPilot Pulse (Mobile)</a> ·
+    <a href={`${base}/hotelpilot/privacy/`}>Privacy Policy</a> ·
+    <a href={`${base}/hotelpilot/terms/`}>Terms of Service</a> ·
+    Contact:&nbsp;bluetechtg@gmail.com
   </p>
 </Legal>
 
@@ -114,5 +141,84 @@ const DEMO_URL = "https://gestionhotelapp.onrender.com/";
 
   .btn-demo:hover {
     opacity: 0.9;
+  }
+
+  /* Mobile companion highlight */
+  .mobile-companion-card {
+    background: color-mix(in srgb, var(--accent) 7%, var(--bg));
+    border: 1px solid color-mix(in srgb, var(--accent) 28%, var(--border));
+    border-radius: 16px;
+    padding: 1.6rem;
+    margin: 2.5rem 0;
+  }
+
+  .companion-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .companion-icon {
+    border-radius: 16px;
+    box-shadow: 0 3px 10px rgba(32, 138, 239, 0.25);
+    flex-shrink: 0;
+  }
+
+  .companion-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    margin-bottom: 0.2rem;
+  }
+
+  .companion-title {
+    margin: 0 !important;
+    font-size: 1.35rem !important;
+    letter-spacing: -0.01em;
+  }
+
+  .companion-desc {
+    margin: 0 0 1.2rem !important;
+    line-height: 1.6;
+    color: var(--fg);
+  }
+
+  .companion-actions {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .btn-pulse {
+    background: var(--accent);
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: opacity 0.15s;
+  }
+
+  .btn-pulse:hover { opacity: 0.9; }
+
+  .btn-pulse-sub {
+    color: var(--accent) !important;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.82rem;
+    padding: 0.45rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid color-mix(in srgb, var(--accent) 25%, var(--border));
+    background: var(--bg);
+  }
+
+  .btn-pulse-sub:hover {
+    background: color-mix(in srgb, var(--accent) 12%, var(--bg));
   }
 </style>

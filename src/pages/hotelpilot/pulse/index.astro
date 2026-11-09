@@ -1,0 +1,232 @@
+---
+import Legal from "../../../layouts/Legal.astro";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const DEMO_URL = "https://gestionhotelapp.onrender.com/";
+---
+
+<Legal
+  frontmatter={{
+    title: "HotelPilot Pulse — Mobile Field Companion",
+    project: "HotelPilot Pulse",
+    published: "September 16, 2026",
+    updated: "November 9, 2026",
+    description:
+      "HotelPilot Pulse — Mobile field companion for HotelPilot Suite. Built for hotel staff on the move: housekeeping, maintenance, mobile check-in, key control, and offline resilience.",
+    image: `${base}/hotelpilot/pulse-icon.png`,
+  }}
+>
+  <Fragment slot="hero">
+    <div class="hero">
+      <img
+        class="pulse-icon"
+        src={`${base}/hotelpilot/pulse-icon.png`}
+        alt="HotelPilot Pulse Icon"
+        width="96"
+        height="96"
+      />
+      <div class="badge-role">Mobile Companion · On-the-Move Staff</div>
+      <p class="tagline">
+        The field companion to HotelPilot Suite. Built for corridors, rooms, and hospitality staff on the go.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href={`${base}/hotelpilot/`}>← HotelPilot Suite PMS</a>
+        <a class="btn-demo" href={DEMO_URL} target="_blank" rel="noopener noreferrer">PMS Live Demo ↗</a>
+      </div>
+    </div>
+  </Fragment>
+
+  <p class="lead">
+    While the HotelPilot Suite web back-office is designed for reception desks and managerial offices,
+    <strong>HotelPilot Pulse</strong> is designed for the field: chambermaids, housekeepers, maintenance technicians,
+    and mobile staff working room-by-room with one hand occupied and spotty Wi-Fi coverage.
+  </p>
+
+  <h2>Designed for Corridors, Not Desks</h2>
+  <p>
+    HotelPilot Pulse does not attempt to clone complex desk tables onto a phone. It selectively ships only
+    actions that are faster, cleaner, and more natural on a mobile device at the point of work.
+  </p>
+
+  <h2>Key Field Capabilities</h2>
+
+  <h3>1. Corridor Housekeeping & Room Status</h3>
+  <ul>
+    <li>
+      <strong>Real-Time Room Board</strong>: Housekeepers instantly see assigned rooms for the shift (<em>dirty → cleaning → clean → inspected</em>).
+    </li>
+    <li>
+      <strong>Single-Tap Cleaning Visits</strong>: Start and finish cleaning with a single tap, automatically recording cleaning duration and updating the front desk in real time.
+    </li>
+    <li>
+      <strong>Head Housekeeper Inspections</strong>: Supervisors validate clean rooms on the spot to release them for immediate guest check-in.
+    </li>
+  </ul>
+
+  <h3>2. Instant Maintenance Reporting with Camera</h3>
+  <ul>
+    <li>
+      <strong>Photo Evidence on the Spot</strong>: Encounter a broken air conditioner, plumbing issue, or damaged furniture? Snap a photo directly from the room.
+    </li>
+    <li>
+      <strong>Severity Flags & Auto-Block</strong>: Mark issues as minor or blocking. High-severity reports automatically take the room off sale on the PMS calendar to prevent double-booking.
+    </li>
+  </ul>
+
+  <h3>3. Lost & Found Management</h3>
+  <ul>
+    <li>
+      Log left-behind items immediately upon finding them in a departure room.
+    </li>
+    <li>
+      Attach photos, room number, description, and timestamp to accelerate guest returns.
+    </li>
+  </ul>
+
+  <h3>4. Key Deposit & Access Control</h3>
+  <ul>
+    <li>
+      Track physical key and RFID keycard handovers (<em>keys, cards, or both</em>).
+    </li>
+    <li>
+      Log guest key returns with quick tap chips, ensuring transparent security logs.
+    </li>
+  </ul>
+
+  <h3>5. Mobile Check-In & Check-Out</h3>
+  <ul>
+    <li>
+      Process guest arrivals and departures directly at the curb or inside suites without queuing at reception.
+    </li>
+    <li>
+      Quickly inspect room balance, confirm payments, and close stays on the move.
+    </li>
+  </ul>
+
+  <h3>6. On-the-Go Extras & Room Service</h3>
+  <ul>
+    <li>
+      Charge minibar consumption, laundry items, or room service directly to the guest folio while inside the room.
+    </li>
+  </ul>
+
+  <h3>7. Internal Staff Messaging</h3>
+  <ul>
+    <li>
+      Real-time internal chat channels: <em>"Room 204 is inspected and ready"</em>, <em>"Luggage assistance needed at lobby"</em>.
+    </li>
+    <li>
+      Direct messages between receptionists, housekeepers, and facility managers.
+    </li>
+  </ul>
+
+  <h2>Built-In Offline Resilience</h2>
+  <p>
+    Hotel service areas, stairwells, and basements often suffer from dead zones and unstable Wi-Fi.
+    HotelPilot Pulse features a <strong>local-first SQLite queue</strong> (via Drizzle ORM):
+    status updates and issue reports are saved locally on the device instantly and automatically replayed to
+    the Django REST backend as soon as connectivity resumes.
+  </p>
+
+  <h2>Adaptive Native Experience</h2>
+  <p>
+    Built with React Native and Expo, HotelPilot Pulse adopts platform-native guidelines (Apple HIG on iOS,
+    Material Design on Android) for fluid, accessible navigation with high-contrast touch targets.
+  </p>
+
+  <hr />
+  <p>
+    <a href={`${base}/hotelpilot/pulse/privacy/`}>Privacy Policy</a> ·
+    <a href={`${base}/hotelpilot/pulse/terms/`}>Terms of Service</a> ·
+    <a href={`${base}/hotelpilot/`}>HotelPilot Suite PMS Overview</a> ·
+    Contact:&nbsp;<strong>bluetechtg@gmail.com</strong>
+  </p>
+</Legal>
+
+<style>
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.85rem;
+    margin: 0.5rem 0 2.5rem;
+  }
+
+  .pulse-icon {
+    border-radius: 22%;
+    box-shadow: 0 4px 14px rgba(32, 138, 239, 0.25);
+  }
+
+  .badge-role {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: #e0f2fe;
+    color: #0369a1;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .badge-role {
+      background: #082f49;
+      color: #7dd3fc;
+    }
+  }
+
+  .tagline {
+    color: var(--fg-muted);
+    font-size: 1.05rem;
+    max-width: 44ch;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.88rem;
+    padding: 0.55rem 1.1rem;
+    border-radius: 8px;
+    transition: opacity 0.15s;
+  }
+  .btn-primary:hover { opacity: 0.9; }
+
+  .btn-demo {
+    background: #059669;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.88rem;
+    padding: 0.55rem 1.1rem;
+    border-radius: 8px;
+    transition: opacity 0.15s;
+  }
+  .btn-demo:hover { opacity: 0.9; }
+
+  .lead {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--fg);
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    margin-top: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: var(--fg);
+  }
+</style>

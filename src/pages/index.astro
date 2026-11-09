@@ -126,10 +126,11 @@ const description =
               </div>
             </div>
             <p class="card-desc">
-              Complete cloud-based Property Management System for hotels, boutique residences, and hospitality groups. Reservations, billing, housekeeping, and stock control.
+              Complete cloud Property Management System (PMS) for hotels and residences, paired with the <strong>HotelPilot Pulse</strong> mobile app for corridor housekeeping, maintenance photos, and offline operations.
             </p>
             <div class="card-links">
-              <a href={`${base}/hotelpilot/`} class="btn-primary">Overview</a>
+              <a href={`${base}/hotelpilot/`} class="btn-primary">PMS Overview</a>
+              <a href={`${base}/hotelpilot/pulse/`} class="btn-pulse-home">📱 Mobile App (Pulse)</a>
               <a href="https://gestionhotelapp.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn-primary btn-demo">Live Demo ↗</a>
               <a href={`${base}/hotelpilot/terms/`} class="btn-secondary">Terms of Service</a>
               <a href={`${base}/hotelpilot/privacy/`} class="btn-secondary">Privacy Policy</a>
@@ -418,6 +419,17 @@ const description =
   }
   .btn-primary:hover { opacity: 0.9; }
   .btn-demo { background: #059669; }
+  .btn-pulse-home {
+    background: #0284c7;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.45rem 0.85rem;
+    border-radius: 8px;
+    transition: opacity 0.15s;
+  }
+  .btn-pulse-home:hover { opacity: 0.9; }
   .btn-secondary {
     background: color-mix(in srgb, var(--border) 60%, transparent);
     color: var(--fg) !important;

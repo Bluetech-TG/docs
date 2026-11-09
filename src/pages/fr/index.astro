@@ -126,10 +126,11 @@ const description =
               </div>
             </div>
             <p class="card-desc">
-              Plateforme complète de gestion hôtelière (PMS) pour hôtels et résidences. Réservations, facturation, entretien des chambres, gestion de stocks et accompagnement multi-établissements.
+              Plateforme cloud complète de gestion hôtelière (PMS) couplée à l'application mobile <strong>HotelPilot Pulse</strong> pour le ménage en chambre, les photos de pannes et le mode hors-ligne.
             </p>
             <div class="card-links">
-              <a href={`${base}/hotelpilot/fr/`} class="btn-primary">Présentation</a>
+              <a href={`${base}/hotelpilot/fr/`} class="btn-primary">Suite PMS</a>
+              <a href={`${base}/hotelpilot/fr/pulse/`} class="btn-pulse-home">📱 App Mobile (Pulse)</a>
               <a href="https://gestionhotelapp.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn-primary btn-demo">Démo en ligne ↗</a>
               <a href={`${base}/hotelpilot/fr/terms/`} class="btn-secondary">Conditions d'utilisation</a>
               <a href={`${base}/hotelpilot/fr/privacy/`} class="btn-secondary">Confidentialité</a>
@@ -420,6 +421,17 @@ const description =
   }
   .btn-primary:hover { opacity: 0.9; }
   .btn-demo { background: #059669; }
+  .btn-pulse-home {
+    background: #0284c7;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.45rem 0.85rem;
+    border-radius: 8px;
+    transition: opacity 0.15s;
+  }
+  .btn-pulse-home:hover { opacity: 0.9; }
   .btn-secondary {
     background: color-mix(in srgb, var(--border) 60%, transparent);
     color: var(--fg) !important;

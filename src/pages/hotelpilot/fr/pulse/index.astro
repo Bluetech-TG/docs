@@ -1,0 +1,228 @@
+---
+import Legal from "../../../../layouts/Legal.astro";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const DEMO_URL = "https://gestionhotelapp.onrender.com/";
+---
+
+<Legal
+  frontmatter={{
+    title: "HotelPilot Pulse — L'Application Mobile Terrain",
+    project: "HotelPilot Pulse",
+    published: "16 septembre 2026",
+    updated: "9 novembre 2026",
+    description:
+      "HotelPilot Pulse — Le compagnon mobile tout-terrain de HotelPilot Suite. Pensé pour le personnel en mouvement : ménage, maintenance avec photo, arrivées/départs et fonctionnement hors-ligne.",
+    image: `${base}/hotelpilot/pulse-icon.png`,
+  }}
+>
+  <Fragment slot="hero">
+    <div class="hero">
+      <img
+        class="pulse-icon"
+        src={`${base}/hotelpilot/pulse-icon.png`}
+        alt="Icône HotelPilot Pulse"
+        width="96"
+        height="96"
+      />
+      <div class="badge-role">Compagnon Mobile · Personnel Terrain</div>
+      <p class="tagline">
+        L'outil terrain de HotelPilot Suite. Conçu pour les couloirs, les chambres et le personnel en mouvement.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href={`${base}/hotelpilot/fr/`}>← Suite PMS HotelPilot</a>
+        <a class="btn-demo" href={DEMO_URL} target="_blank" rel="noopener noreferrer">Démo en ligne du PMS ↗</a>
+      </div>
+    </div>
+  </Fragment>
+
+  <p class="lead">
+    Alors que le back-office web d'HotelPilot Suite est idéal pour les postes de réception et la direction,
+    <strong>HotelPilot Pulse</strong> est né pour le terrain : gouvernantes, valets de chambre, techniciens de
+    maintenance et réceptionnistes en mobilité, travaillant de chambre en chambre, souvent une main encombrée
+    et sur un réseau Wi-Fi capricieux.
+  </p>
+
+  <h2>Pensée pour les couloirs, pas pour un bureau</h2>
+  <p>
+    HotelPilot Pulse ne cherche pas à copier bêtement des tableaux administratifs sur un écran de téléphone.
+    L'application sélectionne exclusivement les actions qui sont plus rapides, plus pratiques et plus fiables
+    au point d'intervention physique.
+  </p>
+
+  <h2>Fonctionnalités Clés sur le Terrain</h2>
+
+  <h3>1. Housekeeping & Statut des Chambres</h3>
+  <ul>
+    <li>
+      <strong>Tableau des chambres du jour</strong> : Les gouvernantes et valets visualisent instantanément les chambres à préparer pour leur service (<em>à nettoyer → en cours → propre → inspectée</em>).
+    </li>
+    <li>
+      <strong>Démarrage et fin de visite en 1 tap</strong> : Horodatage précis du temps de nettoyage et mise à jour automatique en temps réel auprès de la réception.
+    </li>
+    <li>
+      <strong>Validation Gouvernante</strong> : Contrôle et validation des chambres terminées directement sur place pour libérer immédiatement la chambre aux arrivées clients.
+    </li>
+  </ul>
+
+  <h3>2. Signalement Instantané de Pannes avec Photo</h3>
+  <ul>
+    <li>
+      <strong>Preuve photo sur le champ</strong> : Climatiseur en panne, fuite d'eau, mobilier endommagé ? Prise de photo immédiate depuis la chambre.
+    </li>
+    <li>
+      <strong>Niveaux de gravité & Blocage automatique</strong> : Définition de l'urgence (mineure ou bloquante). Les incidents majeurs retirent automatiquement la chambre de la vente sur le planning web pour éviter tout surbooking involontaire.
+    </li>
+  </ul>
+
+  <h3>3. Objets Trouvés (Lost & Found)</h3>
+  <ul>
+    <li>
+      Déclaration instantanée d'un objet oublié par un client dès sa découverte dans une chambre de départ.
+    </li>
+    <li>
+      Photo attachée, numéro de chambre, description et horodatage pour faciliter et sécuriser la restitution.
+    </li>
+  </ul>
+
+  <h3>4. Dépôt & Retour des Clés (Contrôle d'accès)</h3>
+  <ul>
+    <li>
+      Suivi précis de la remise des clés physiques et des cartes RFID (<em>clés, cartes, ou les deux</em>).
+    </li>
+    <li>
+      Enregistrement rapide de la restitution avec des pastilles interactives.
+    </li>
+  </ul>
+
+  <h3>5. Check-In & Check-Out en Mobilité</h3>
+  <ul>
+    <li>
+      Enregistrement des arrivées et départs directement à l'accueil, en terrasse ou en chambre sans faire patienter le client à un guichet.
+    </li>
+    <li>
+      Consultation rapide du solde, confirmation des encaissements et clôture de séjour.
+    </li>
+  </ul>
+
+  <h3>6. Extras & Consommations en Chambre</h3>
+  <ul>
+    <li>
+      Facturation directe des consommations minibar, du service de blanchisserie ou du room service sur la note du client directement depuis la chambre.
+    </li>
+  </ul>
+
+  <h3>7. Messagerie d'Équipe en Temps Réel</h3>
+  <ul>
+    <li>
+      Canaux de discussion internes : <em>« Chambre 305 prête »</em>, <em>« Bagagiste demandé au hall »</em>.
+    </li>
+    <li>
+      Échanges directs et sécurisés entre la réception, les étages et la maintenance technique.
+    </li>
+  </ul>
+
+  <h2>Résilience Hors-Ligne Native</h2>
+  <p>
+    Dans les étages, les sous-sols ou les zones techniques des hôtels, le réseau mobile ou Wi-Fi peut être
+    instable. HotelPilot Pulse intègre une <strong>file d'attente SQLite locale</strong> (via Drizzle ORM) :
+    chaque changement de statut ou signalement est enregistré instantanément sur le téléphone et rejoué
+    automatiquement auprès de l'API dès que la connexion est rétablie.
+  </p>
+
+  <hr />
+  <p>
+    <a href={`${base}/hotelpilot/fr/pulse/privacy/`}>Politique de confidentialité</a> ·
+    <a href={`${base}/hotelpilot/fr/pulse/terms/`}>Conditions d'utilisation</a> ·
+    <a href={`${base}/hotelpilot/fr/`}>Présentation de HotelPilot Suite</a> ·
+    Contact :&nbsp;<strong>bluetechtg@gmail.com</strong>
+  </p>
+</Legal>
+
+<style>
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.85rem;
+    margin: 0.5rem 0 2.5rem;
+  }
+
+  .pulse-icon {
+    border-radius: 22%;
+    box-shadow: 0 4px 14px rgba(32, 138, 239, 0.25);
+  }
+
+  .badge-role {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: #e0f2fe;
+    color: #0369a1;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .badge-role {
+      background: #082f49;
+      color: #7dd3fc;
+    }
+  }
+
+  .tagline {
+    color: var(--fg-muted);
+    font-size: 1.05rem;
+    max-width: 44ch;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.88rem;
+    padding: 0.55rem 1.1rem;
+    border-radius: 8px;
+    transition: opacity 0.15s;
+  }
+  .btn-primary:hover { opacity: 0.9; }
+
+  .btn-demo {
+    background: #059669;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.88rem;
+    padding: 0.55rem 1.1rem;
+    border-radius: 8px;
+    transition: opacity 0.15s;
+  }
+  .btn-demo:hover { opacity: 0.9; }
+
+  .lead {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--fg);
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    margin-top: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: var(--fg);
+  }
+</style>

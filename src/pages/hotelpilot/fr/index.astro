@@ -65,43 +65,50 @@ const DEMO_URL = "https://gestionhotelapp.onrender.com/";
     <li>Journal d'activité complet pour tracer qui a fait quoi.</li>
   </ul>
 
-  <h2>Application mobile compagnon</h2>
-  <div class="mobile-app-header">
-    <img
-      class="mobile-icon"
-      src={`${base}hotelpilot/mobile-icon.png`}
-      alt=""
-      width="56"
-      height="56"
-    />
-    <p>
-      HotelPilot Suite ne s'arrête pas au bureau de la réception : une application mobile, pour
-      le même personnel et les mêmes données que le PMS web, met les actions les plus utiles sur
-      le terrain à portée de main.
+  <h2>Application mobile compagnon : HotelPilot Pulse</h2>
+  <div class="mobile-companion-card">
+    <div class="companion-header">
+      <img
+        class="companion-icon"
+        src={`${base}/hotelpilot/pulse-icon.png`}
+        alt="Icône HotelPilot Pulse"
+        width="64"
+        height="64"
+      />
+      <div>
+        <span class="companion-badge">Compagnon Mobile Terrain</span>
+        <h3 class="companion-title">HotelPilot Pulse</h3>
+      </div>
+    </div>
+    <p class="companion-desc">
+      HotelPilot Suite ne s'arrête pas au comptoir de la réception : <strong>HotelPilot Pulse</strong> met les actions les plus utiles directement entre les mains du personnel en mouvement dans les étages :
     </p>
+    <ul>
+      <li><strong>Ménage & Chambres</strong> : tableau de bord en direct (<em>sale → en cours → propre → inspectée</em>) avec horodatage en 1 tap.</li>
+      <li><strong>Maintenance avec photo</strong> : constatation immédiate de panne et blocage automatique de la chambre sur le planning web.</li>
+      <li><strong>Objets trouvés</strong> : enregistrement instantané des effets oubliés avec photo et n° de chambre.</li>
+      <li><strong>Gestion des clés & Accès</strong> : dépôt et retour des clés physiques et cartes magnétiques.</li>
+      <li><strong>Arrivées/Départs & Extras</strong> : check-in/out en terrasse ou en chambre, facturation minibar/blanchisserie en direct.</li>
+      <li><strong>Résilience hors-ligne</strong> : file d'attente locale (SQLite) pour continuer à travailler même dans les sous-sols et couloirs sans Wi-Fi.</li>
+    </ul>
+    <div class="companion-actions">
+      <a href={`${base}/hotelpilot/fr/pulse/`} class="btn-pulse">Découvrir l'application HotelPilot Pulse →</a>
+      <a href={`${base}/hotelpilot/fr/pulse/privacy/`} class="btn-pulse-sub">Confidentialité Pulse</a>
+      <a href={`${base}/hotelpilot/fr/pulse/terms/`} class="btn-pulse-sub">Conditions Pulse</a>
+    </div>
   </div>
-  <ul>
-    <li>Messagerie d'équipe en temps réel : "chambre 305 prête", "besoin d'aide en 214"...</li>
-    <li>Décisions sur les demandes de réservation en ligne, en un tap.</li>
-    <li>Ajout d'extras (minibar, room service) directement depuis la chambre.</li>
-    <li>Capture de la pièce d'identité du client à l'accueil, avec l'appareil photo du téléphone.</li>
-    <li>Sorties de stock et alertes de stock bas, saisies depuis le terrain.</li>
-    <li>Notifications push pour les nouvelles demandes, messages et alertes.</li>
-  </ul>
-  <p>
-    L'application mobile est en cours de développement et n'est pas encore publiée sur l'App
-    Store ni le Play Store.
-  </p>
 
   <p>
-    HotelPilot Suite est proposé en abonnement SaaS, avec facturation par carte ou Mobile Money.
+    HotelPilot Suite est proposé en abonnement SaaS, avec démo en ligne disponible.
   </p>
 
   <hr />
   <p>
     <a href={DEMO_URL}>Démo en ligne</a> ·
-    <a href={`${base}hotelpilot/fr/privacy/`}>Politique de confidentialité</a> · <a href={`${base}hotelpilot/fr/terms/`}>Conditions d'utilisation</a> · Contact&nbsp;:
-    bluetechtg@gmail.com
+    <a href={`${base}/hotelpilot/fr/pulse/`}>HotelPilot Pulse (Mobile)</a> ·
+    <a href={`${base}/hotelpilot/fr/privacy/`}>Politique de confidentialité</a> ·
+    <a href={`${base}/hotelpilot/fr/terms/`}>Conditions d'utilisation</a> ·
+    Contact&nbsp;: bluetechtg@gmail.com
   </p>
 </Legal>
 
@@ -135,21 +142,83 @@ const DEMO_URL = "https://gestionhotelapp.onrender.com/";
     justify-content: center;
   }
 
-  .mobile-app-header {
+  .mobile-companion-card {
+    background: color-mix(in srgb, var(--accent) 7%, var(--bg));
+    border: 1px solid color-mix(in srgb, var(--accent) 28%, var(--border));
+    border-radius: 16px;
+    padding: 1.6rem;
+    margin: 2.5rem 0;
+  }
+
+  .companion-header {
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin: 0 0 1.1rem;
+    margin-bottom: 0.8rem;
   }
 
-  .mobile-app-header p {
-    margin: 0;
-  }
-
-  .mobile-icon {
+  .companion-icon {
+    border-radius: 16px;
+    box-shadow: 0 3px 10px rgba(32, 138, 239, 0.25);
     flex-shrink: 0;
-    border-radius: 22%;
-    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.15);
+  }
+
+  .companion-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    margin-bottom: 0.2rem;
+  }
+
+  .companion-title {
+    margin: 0 !important;
+    font-size: 1.35rem !important;
+    letter-spacing: -0.01em;
+  }
+
+  .companion-desc {
+    margin: 0 0 1.2rem !important;
+    line-height: 1.6;
+    color: var(--fg);
+  }
+
+  .companion-actions {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 1.2rem;
+  }
+
+  .btn-pulse {
+    background: var(--accent);
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: opacity 0.15s;
+  }
+
+  .btn-pulse:hover { opacity: 0.9; }
+
+  .btn-pulse-sub {
+    color: var(--accent) !important;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.82rem;
+    padding: 0.45rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid color-mix(in srgb, var(--accent) 25%, var(--border));
+    background: var(--bg);
+  }
+
+  .btn-pulse-sub:hover {
+    background: color-mix(in srgb, var(--accent) 12%, var(--bg));
   }
 
   .demo-link {
